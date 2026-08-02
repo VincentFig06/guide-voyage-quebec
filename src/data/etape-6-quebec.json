@@ -39,6 +39,13 @@
     { "nom": "Place Royale", "texte": "La toute première place publique fondée par les Français en Amérique, avec ses maisons de pierre restaurées.", "emoji": "⛲" },
     { "nom": "Chutes Montmorency", "texte": "Des chutes d'eau plus hautes que celles du Niagara ! Traverse-les en téléphérique ou passe juste au-dessus sur une passerelle suspendue.", "emoji": "💦" }
   ],
+  "activitesPrevues": [
+    { "nom": "Malbaie", "description": "Un joli détour dans la région de Charlevoix, réputée pour ses paysages entre montagnes et fleuve. Samuel de Champlain lui-même aurait donné son nom à cet endroit, en trouvant que la baie était... mal commode pour ses bateaux !" },
+    { "nom": "Canyon Sainte-Anne", "description": "Un canyon spectaculaire creusé par une rivière, que l'on traverse sur des ponts suspendus à plus de 60 mètres de haut. Sensations garanties en regardant l'eau gronder tout en bas !" },
+    { "nom": "Chute Montmorency", "description": "Ces chutes sont plus hautes que celles du Niagara ! Traverse-les en téléphérique ou marche juste au-dessus sur une passerelle suspendue, pour sentir les embruns sur ton visage." },
+    { "nom": "Visite de la ville de Québec", "description": "Perds-toi (un peu) dans les petites rues pavées du Vieux-Québec, entre calèches, remparts et façades en pierre. C'est la seule ville fortifiée d'Amérique du Nord, alors profites-en pour te sentir un peu chevalier ou princesse le temps d'une balade !" },
+    { "nom": "Points d'intérêt autour de Québec", "description": "Autour de la capitale, plein d'autres surprises t'attendent : îles, villages pittoresques et panoramas sur le fleuve. De quoi prolonger l'aventure après les visites du centre-ville." }
+  ],
   "motQuebecois": {
     "mot": "chocolatine",
     "signification": "pain au chocolat (ici on garde le débat ouvert, même en France !)",

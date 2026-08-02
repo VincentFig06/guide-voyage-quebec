@@ -60,10 +60,15 @@ Google Chrome est installé sur la machine, convertit automatiquement en
 
 ## Modifier le contenu
 
-Chaque étape est un fichier `src/data/etape-N-*.json` (schéma commun : `carnet`, `histoire`, `culture`,
-`specialite`, `pointsInteret`, `motQuebecois`, `activites`, `filRouge`...). Éditer le JSON suffit : la
-PWA et le PDF se mettent à jour tous les deux, sans dupliquer de contenu. Ne pas oublier `npm run build`
-ensuite pour répercuter le changement sur `docs/`.
+Chaque étape est un fichier `src/data/etape-N-*.json` (schéma commun : `position`, `carnet`, `histoire`,
+`culture`, `specialite`, `pointsInteret`, `activitesPrevues`, `motQuebecois`, `activites`, `filRouge`...).
+Éditer le JSON suffit : la PWA et le PDF se mettent à jour tous les deux, sans dupliquer de contenu. Ne
+pas oublier `npm run build` ensuite pour répercuter le changement sur `docs/`.
+
+`activitesPrevues` (section "Nos activités prévues" sur la page de l'étape) liste les activités
+réellement planifiées pour le voyage, chacune avec `nom`, une `description` de 2-3 phrases pour les
+enfants et, en option, `details` (ex. distance/durée d'une randonnée) affiché en petit badge à côté du
+nom. C'est distinct de `pointsInteret`, qui reste une sélection plus générale de lieux à voir.
 
 Types d'activités supportés (`activites[].type`) : `chercheEtTrouve`, `bingo`, `vraiFaux`, `quiz`,
 `enigme`, `motsMeles`, `dessine`.

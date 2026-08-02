@@ -99,6 +99,13 @@ def activity_html(a):
     return "".join(out)
 
 
+def planned_item_html(a):
+    label = esc(a["nom"])
+    if a.get("details"):
+        label += " — " + esc(a["details"])
+    return f'<div class="pdf-planned-item"><b>{label}</b><p>{esc(a["description"])}</p></div>'
+
+
 def stop_pages(s):
     badge = s["badge"]
     left = f"""
@@ -156,7 +163,25 @@ def stop_pages(s):
       </div>
     </section>
     """
-    return left + right
+
+    planned = ""
+    if s.get("activitesPrevues"):
+        items = "".join(planned_item_html(a) for a in s["activitesPrevues"])
+        planned = f"""
+    <section class="pdf-page">
+      <div class="pdf-page-header" style="--c:{badge['couleur']}">
+        <div class="pdf-badge">{badge['emoji']}</div>
+        <div>
+          <div class="pdf-order">Étape {s['ordre']}</div>
+          <h2>{esc(s['ville'])}</h2>
+        </div>
+      </div>
+      <h3>🗓️ Nos activités prévues</h3>
+      {items}
+    </section>
+    """
+
+    return left + right + planned
 
 
 def cover_page():
@@ -228,6 +253,10 @@ p { font-size: 9pt; line-height: 1.32; margin: 2pt 0 5pt; }
 .pdf-poi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6pt; }
 .pdf-poi { background: #FFF1D6; border-radius: 8pt; padding: 6pt 8pt; }
 .pdf-poi p { margin: 2pt 0 0; }
+
+.pdf-planned-item { background: #FFF1D6; border-left: 3px solid #E4572E; border-radius: 6pt; padding: 7pt 10pt; margin-bottom: 7pt; }
+.pdf-planned-item b { font-size: 10pt; }
+.pdf-planned-item p { margin: 2pt 0 0; font-size: 9pt; }
 
 .pdf-mot { background: #F4A93B; color: #2B2118; border-radius: 10pt; padding: 8pt 10pt; margin: 8pt 0; }
 .pdf-mot .mot { font-size: 15pt; font-weight: bold; }

@@ -39,6 +39,12 @@
     { "nom": "Basilique Notre-Dame", "texte": "Un spectacle son et lumière raconte l'histoire de la ville à l'intérieur d'une église toute bleue et dorée.", "emoji": "⛪" },
     { "nom": "Mont-Royal", "texte": "La colline qui a donné son nom à la ville. Monte jusqu'au belvédère pour voir tous les gratte-ciels d'en haut.", "emoji": "🌳" }
   ],
+  "activitesPrevues": [
+    { "nom": "Vieux-Port", "description": "Le Vieux-Port, c'est le quartier le plus ancien de Montréal, juste au bord du fleuve. Tu peux grimper dans la grande roue pour voir toute la ville, ou sauter dans un jet boat qui éclabousse tout le monde sur l'eau !" },
+    { "nom": "Biodôme", "description": "Le Biodôme, c'est un peu de la planète entière sous un même toit : forêt tropicale humide, côte du Labrador glacée, et même des manchots ! Prépare-toi à changer de climat à chaque salle, sans jamais sortir dehors." },
+    { "nom": "Jardin Botanique", "description": "Le Jardin botanique de Montréal est un des plus grands du monde, avec plus de 20 jardins à explorer. Ne rate pas le jardin japonais et ses carpes géantes, ou le jardin des Premières Nations avec ses tipis !" },
+    { "nom": "Mont Royal", "description": "Le Mont Royal est la colline qui a donné son nom à la ville. Grimpe jusqu'au belvédère pour admirer tous les gratte-ciels de Montréal à tes pieds — une des plus belles vues du voyage (pour l'instant) !" }
+  ],
   "motQuebecois": {
     "mot": "char",
     "signification": "voiture",

@@ -270,6 +270,23 @@
           </div>
         </section>
 
+        ${s.activitesPrevues && s.activitesPrevues.length ? `
+        <section class="card-section">
+          <h2>🗓️ Nos activités prévues</h2>
+          <div class="planned-list">
+            ${s.activitesPrevues.map((a) => `
+              <div class="planned-item">
+                <div class="planned-head">
+                  <h3>${esc(a.nom)}</h3>
+                  ${a.details ? `<span class="planned-details">${esc(a.details)}</span>` : ""}
+                </div>
+                <p>${esc(a.description)}</p>
+              </div>
+            `).join("")}
+          </div>
+        </section>
+        ` : ""}
+
         <div class="mot-quebecois">
           <div class="mot">${esc(s.motQuebecois.mot)}</div>
           <div class="signif">${esc(s.motQuebecois.signification)}</div>

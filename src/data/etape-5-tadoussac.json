@@ -38,6 +38,9 @@
     { "nom": "Les dunes de sable", "texte": "D'immenses dunes à dévaler en courant, avec vue sur le fleuve.", "emoji": "🏜️" },
     { "nom": "Maison des Dunes", "texte": "Un centre d'interprétation pour comprendre comment ces dunes géantes se sont formées.", "emoji": "🏛️" }
   ],
+  "activitesPrevues": [
+    { "nom": "Sortie observation des baleines", "description": "Le grand moment du voyage : embarque sur un bateau (ou un zodiac) à la recherche des baleines qui viennent se nourrir à Tadoussac chaque été ! Bélugas blancs, petits rorquals, et parfois même des rorquals à bosse : ouvre grand les yeux, ça peut surgir n'importe où." }
+  ],
   "motQuebecois": {
     "mot": "fin de semaine",
     "signification": "week-end",

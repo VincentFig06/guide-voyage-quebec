@@ -38,6 +38,11 @@
     { "nom": "Randonnée belvédère", "texte": "Une petite montée bien méritée pour admirer le fjord vu d'en haut.", "emoji": "🥾" },
     { "nom": "Le pont couvert rouge", "texte": "Le fameux pont photographié sur l'ancien billet de 1000$ : viens le prendre en photo toi aussi !", "emoji": "🌉" }
   ],
+  "activitesPrevues": [
+    { "nom": "Anse-Saint-Jean", "details": "Kayak", "description": "Direction l'eau pour une sortie en kayak au pied des falaises du fjord ! Pagaie doucement et garde l'œil ouvert : des phoques curieux aiment parfois pointer le museau près des kayaks." },
+    { "nom": "Fjord du Saguenay", "description": "Le fjord est une immense vallée creusée par un glacier il y a 20 000 ans, aujourd'hui remplie d'eau salée et d'eau douce mélangées. Ses falaises spectaculaires peuvent monter à plus de 300 mètres de haut, presque comme une montagne plongeant dans l'eau !" },
+    { "nom": "Rivière Saguenay - Rive Nord", "description": "La rive nord du Saguenay offre des points de vue différents sur le fjord, souvent moins fréquentés que la rive sud. Parfait pour prendre son temps et repérer les meilleurs coins à photographier." }
+  ],
   "motQuebecois": {
     "mot": "c'est plate",
     "signification": "c'est ennuyeux / c'est dommage",

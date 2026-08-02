@@ -344,6 +344,25 @@ section.card-section > h2 {
 .poi-card h3 { font-size: .92rem; margin: 4px 0 2px; }
 .poi-card p { font-size: .82rem; color: var(--ink-soft); margin: 0; }
 
+.planned-list { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+.planned-item {
+  background: var(--paper);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  border-left: 4px solid var(--badge-color, var(--accent));
+}
+.planned-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 2px; }
+.planned-head h3 { font-size: .95rem; margin: 0; }
+.planned-details {
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--badge-color, var(--accent-3));
+  background: var(--paper-alt);
+  padding: 2px 9px;
+  border-radius: 999px;
+}
+.planned-item p { font-size: .85rem; color: var(--ink-soft); margin: 0; }
+
 .mot-quebecois {
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   color: #fff;

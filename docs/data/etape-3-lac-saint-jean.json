@@ -38,6 +38,10 @@
     { "nom": "Village historique de Val-Jalbert", "texte": "Un authentique village fantôme abandonné, avec ses maisons intactes et une cascade impressionnante juste à côté.", "emoji": "🏚️" },
     { "nom": "Cueillette de bleuets", "texte": "Si la saison le permet, remplis un petit panier de bleuets directement sur les plants !", "emoji": "🧺" }
   ],
+  "activitesPrevues": [
+    { "nom": "Zoo de Saint-Félicien", "description": "Ici, ce sont les animaux qui ont l'air libre : ours noirs, loups et bisons se baladent dans de grands espaces, et toi tu les observes depuis un sentier (ou même un petit train !). Un des meilleurs zoos du Québec pour voir la faune d'ici de tout près." },
+    { "nom": "Val-Jalbert", "description": "Un authentique village fantôme abandonné en une nuit, avec ses maisons intactes et sa cascade impressionnante juste à côté. Une étape à ne pas manquer pour comprendre l'histoire déjà racontée dans ton passeport !" }
+  ],
   "motQuebecois": {
     "mot": "dépanneur",
     "signification": "petite épicerie de quartier ouverte tard",
