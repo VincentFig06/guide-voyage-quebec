@@ -5,6 +5,7 @@
   "accroche": "Le berceau de la Nouvelle-France, où tout a commencé.",
   "dates": { "debut": "2026-08-25", "fin": "2026-08-28", "duree": "4 jours" },
   "badge": { "emoji": "🏰", "nom": "Château & fleur de lys", "couleur": "#7D3C98" },
+  "position": { "lat": 46.81, "lon": -71.21 },
   "carnet": {
     "ouOnEst": "Québec est la capitale de la province, construite sur un cap rocheux qui surplombe le fleuve Saint-Laurent. C'est ici que le fleuve devient si étroit qu'on peut presque voir l'autre rive.",
     "aQuoiCaRessemble": "Des remparts de pierre, des rues pavées, des calèches tirées par des chevaux, et un immense château-hôtel qui domine toute la ville : le Château Frontenac."

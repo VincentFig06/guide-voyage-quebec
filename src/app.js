@@ -18,6 +18,7 @@
   const app = document.getElementById("app");
 
   let STOPS = [];
+  let MAPS = { global: "" }; // { global: svgText, [stopId]: svgText }
 
   // ---------- Persistence ----------
   function getProgress() {
@@ -55,6 +56,16 @@
       STOP_FILES.map((f) => fetch(`data/${f}`).then((r) => r.json()))
     );
     return results.sort((a, b) => a.ordre - b.ordre);
+  }
+
+  async function loadMaps(stops) {
+    const [globalSvg, ...miniSvgs] = await Promise.all([
+      fetch("assets/maps/carte-globale.svg").then((r) => r.text()),
+      ...stops.map((s) => fetch(`assets/maps/carte-${s.id}.svg`).then((r) => r.text()))
+    ]);
+    const maps = { global: globalSvg };
+    stops.forEach((s, i) => { maps[s.id] = miniSvgs[i]; });
+    return maps;
   }
 
   // ---------- Helpers ----------
@@ -108,6 +119,7 @@
           <h1>Passeport de l'Explorateur du Québec</h1>
           <p class="cover-sub">Suis le fil rouge de la Nouvelle-France, de Montréal jusqu'à Québec. Tamponne chaque étape que tu termines !</p>
         </div>
+        <div class="map-card" id="globalMap">${MAPS.global}</div>
         <div class="timeline">
           ${STOPS.map((s) => stopRowHtml(s)).join("")}
         </div>
@@ -117,6 +129,16 @@
         <p class="footer-note">Fonctionne 100% hors connexion, une fois installé sur l'écran d'accueil.</p>
       </div>
     `;
+    wireMapHandlers(document.getElementById("globalMap"));
+  }
+
+  function wireMapHandlers(container) {
+    if (!container) return;
+    container.querySelectorAll("[data-stop]").forEach((el) => {
+      el.addEventListener("click", () => {
+        location.hash = `#/etape/${el.dataset.stop}`;
+      });
+    });
   }
 
   function stopRowHtml(s) {
@@ -201,6 +223,11 @@
         </div>
 
         <section class="card-section">
+          <h2>📍 Tu es ici !</h2>
+          <div class="map-card mini-map-card" id="miniMap">${MAPS[s.id] || ""}</div>
+        </section>
+
+        <section class="card-section">
           <h2>🗺️ Ta carte carnet</h2>
           <div class="carnet-grid">
             <div class="carnet-box"><b>Où on est</b>${esc(s.carnet.ouOnEst)}</div>
@@ -279,6 +306,7 @@
     `;
 
     wireDetailHandlers(s, st, prev, next);
+    wireMapHandlers(document.getElementById("miniMap"));
   }
 
   // ---------- Activity rendering ----------
@@ -597,6 +625,7 @@
     app.innerHTML = `<div class="screen"><div class="cover"><h1>🧭 Chargement du passeport…</h1></div></div>`;
     try {
       STOPS = await loadAllData();
+      MAPS = await loadMaps(STOPS);
       render();
     } catch (e) {
       app.innerHTML = `<div class="screen"><div class="cover"><h1>😕 Oups</h1><p class="cover-sub">Impossible de charger le passeport. Vérifie ta connexion la première fois que tu ouvres l'appli.</p></div></div>`;

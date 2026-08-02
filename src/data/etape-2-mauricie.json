@@ -5,6 +5,7 @@
   "accroche": "Ici, la forêt régnait déjà bien avant les humains.",
   "dates": { "debut": "2026-08-16", "fin": "2026-08-18", "duree": "3 jours" },
   "badge": { "emoji": "🍁", "nom": "Feuille d'érable", "couleur": "#C1392B" },
+  "position": { "lat": 46.69, "lon": -72.69 },
   "carnet": {
     "ouOnEst": "En route vers le nord, entre Montréal et le Lac-Saint-Jean, tu entres dans la grande forêt québécoise. Ici, ce sont les arbres qui commandent !",
     "aQuoiCaRessemble": "Des lacs à perte de vue, des sentiers dans les bois et, si tu es patient, peut-être un castor qui construit son barrage au coucher du soleil."

@@ -1,6 +1,6 @@
 /* Service worker — cache everything on install so the passeport works 100% hors connexion. */
 
-const CACHE_VERSION = "passeport-quebec-v1";
+const CACHE_VERSION = "passeport-quebec-v2";
 
 const CORE_ASSETS = [
   "./",
@@ -18,7 +18,14 @@ const CORE_ASSETS = [
   "./data/etape-3-lac-saint-jean.json",
   "./data/etape-4-fjord-saguenay.json",
   "./data/etape-5-tadoussac.json",
-  "./data/etape-6-quebec.json"
+  "./data/etape-6-quebec.json",
+  "./assets/maps/carte-globale.svg",
+  "./assets/maps/carte-etape-1-montreal.svg",
+  "./assets/maps/carte-etape-2-mauricie.svg",
+  "./assets/maps/carte-etape-3-lac-saint-jean.svg",
+  "./assets/maps/carte-etape-4-fjord-saguenay.svg",
+  "./assets/maps/carte-etape-5-tadoussac.svg",
+  "./assets/maps/carte-etape-6-quebec.svg"
 ];
 
 self.addEventListener("install", (event) => {

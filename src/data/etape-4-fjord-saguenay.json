@@ -5,6 +5,7 @@
   "accroche": "Un fjord creusé par des géants de glace.",
   "dates": { "debut": "2026-08-21", "fin": "2026-08-23", "duree": "3 jours" },
   "badge": { "emoji": "🏔️", "nom": "Fjord", "couleur": "#1B4F72" },
+  "position": { "lat": 48.23, "lon": -70.22 },
   "carnet": {
     "ouOnEst": "La rivière Saguenay se glisse entre deux hautes falaises de roche avant de rejoindre le fleuve Saint-Laurent. Anse-Saint-Jean est un petit village niché au creux de ce paysage spectaculaire.",
     "aQuoiCaRessemble": "De l'eau très profonde encadrée de montagnes abruptes couvertes de sapins. Un vrai décor de carte postale !"

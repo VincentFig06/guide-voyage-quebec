@@ -5,6 +5,7 @@
   "accroche": "Un lac si grand qu'on dirait la mer !",
   "dates": { "debut": "2026-08-18", "fin": "2026-08-21", "duree": "4 jours" },
   "badge": { "emoji": "🫐", "nom": "Bleuet", "couleur": "#4C3B8C" },
+  "position": { "lat": 48.52, "lon": -72.23 },
   "carnet": {
     "ouOnEst": "Le Lac-Saint-Jean est un immense lac rond, si grand que tu ne verras pas l'autre rive ! Roberval est l'une des villes posées sur ses bords.",
     "aQuoiCaRessemble": "De longues plages de sable, une eau parfois turquoise, et des champs de petits fruits bleus à perte de vue tout autour du lac."

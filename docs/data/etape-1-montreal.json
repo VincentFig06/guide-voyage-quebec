@@ -5,6 +5,7 @@
   "accroche": "La ville aux cent clochers... et aux gratte-ciels !",
   "dates": { "debut": "2026-08-13", "fin": "2026-08-16", "duree": "4 jours" },
   "badge": { "emoji": "🏙️", "nom": "Gratte-ciel", "couleur": "#2E86AB" },
+  "position": { "lat": 45.50, "lon": -73.57 },
   "carnet": {
     "ouOnEst": "Montréal est une île posée sur le fleuve Saint-Laurent, au sud du Québec. C'est la plus grande ville de la province !",
     "aQuoiCaRessemble": "Des gratte-ciels en verre à côté de maisons en pierre grise avec des escaliers en colimaçon dehors. Sous tes pieds, tout un monde souterrain : la ville intérieure !"

@@ -129,6 +129,42 @@ a { color: inherit; }
   margin: 0 auto 18px;
 }
 
+/* ---------- Cartes SVG (globale + mini "Tu es ici !") ---------- */
+.map-card {
+  margin: 4px 16px 20px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  background: var(--paper-alt);
+  line-height: 0;
+}
+
+.map-card svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mini-map-card {
+  margin: 10px 0 0;
+  border-radius: var(--radius-md);
+  max-height: 340px;
+  display: flex;
+  justify-content: center;
+}
+
+.mini-map-card svg {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 340px;
+}
+
+.map-point { cursor: pointer; }
+.map-point:hover, .map-point:active {
+  filter: drop-shadow(0 2px 5px rgba(43, 33, 24, 0.35));
+}
+
 /* ---------- Timeline ---------- */
 .timeline {
   position: relative;

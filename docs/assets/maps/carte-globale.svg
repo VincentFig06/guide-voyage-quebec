@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 960" role="img"
+     aria-label="Carte du trajet : les 6 étapes du passeport de l'explorateur du Québec">
+  
+  <defs>
+    <linearGradient id="paperGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFF8EC"/>
+      <stop offset="1" stop-color="#FFF1D6"/>
+    </linearGradient>
+  </defs>
+  
+  <rect x="0" y="0" width="640" height="960" rx="28" fill="url(#paperGrad)"/>
+  <rect x="16" y="16" width="608" height="928" rx="20"
+        fill="none" stroke="#5A4A3A" stroke-width="3"/>
+  <rect x="30" y="30" width="580" height="900" rx="14"
+        fill="none" stroke="#9C7A4A" stroke-width="1.5" stroke-dasharray="6 7" opacity="0.6"/>
+  <circle cx="16" cy="16" r="4" fill="#9C7A4A" opacity="0.5"/>
+  <circle cx="624" cy="16" r="4" fill="#9C7A4A" opacity="0.5"/>
+  <circle cx="16" cy="944" r="4" fill="#9C7A4A" opacity="0.5"/>
+  <circle cx="624" cy="944" r="4" fill="#9C7A4A" opacity="0.5"/>
+  <text x="320.0" y="60" text-anchor="middle" font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="30" font-weight="800" fill="#2B2118">🧭 Mon itinéraire</text>
+  <text x="320.0" y="88" text-anchor="middle" font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="14" fill="#5A4A3A">Touche une étape pour l'ouvrir !</text>
+
+  <path d="M 70.0 800.0 Q 264.6 695.4 376.5 505.0 Q 444.2 327.0 594.4 210.1" fill="none" stroke="#BFE0EA" stroke-width="16" stroke-linecap="round" opacity="0.8"/>
+  <path d="M 244.0 120.0 Q 351.8 191.9 480.7 178.5 Q 543.2 173.8 594.4 210.1" fill="none" stroke="#BFE0EA" stroke-width="13" stroke-linecap="round" opacity="0.8"/>
+  <text x="306" y="575" font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="12" font-style="italic" fill="#5A4A3A" opacity="0.8">fleuve Saint-Laurent</text>
+  <text x="322" y="135" font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="11" font-style="italic" fill="#5A4A3A" opacity="0.8">rivière Saguenay</text>
+
+  <path d="M 70.0 800.0 L 184.3 532.1 L 244.0 120.0 L 480.7 178.5 L 594.4 210.1 L 376.5 505.0" fill="none" stroke="#9C7A4A" stroke-width="3.5" stroke-dasharray="2 10" stroke-linecap="round"/>
+  <polygon points="9,0 -6,-6 -6,6" fill="#9C7A4A" transform="translate(127.2,666.0) rotate(-66.9)" opacity="0.85"/>
+  <polygon points="9,0 -6,-6 -6,6" fill="#9C7A4A" transform="translate(214.2,326.1) rotate(-81.8)" opacity="0.85"/>
+  <polygon points="9,0 -6,-6 -6,6" fill="#9C7A4A" transform="translate(362.3,149.3) rotate(13.9)" opacity="0.85"/>
+  <polygon points="9,0 -6,-6 -6,6" fill="#9C7A4A" transform="translate(537.5,194.3) rotate(15.5)" opacity="0.85"/>
+  <polygon points="9,0 -6,-6 -6,6" fill="#9C7A4A" transform="translate(485.5,357.5) rotate(126.5)" opacity="0.85"/>
+
+  
+  <g class="map-point" data-stop="etape-1-montreal" transform="translate(70.0,800.0)" opacity="1">
+    
+    <circle r="30" fill="#FFF1D6" stroke="#2E86AB" stroke-width="4"/>
+    <text x="0" y="1" text-anchor="middle" dominant-baseline="central" font-size="28">🏙️</text>
+    <circle cx="21.6" cy="-21.6" r="13" fill="#2E86AB" stroke="#FFF8EC" stroke-width="2"/>
+    <text x="21.6" y="-20.6" text-anchor="middle" dominant-baseline="central"
+          font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="13" font-weight="800" fill="#fff">1</text>
+    <text x="0" y="52" text-anchor="middle" font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="16" font-weight="800" fill="#2B2118">Montréal</text>
+  </g>
+
+  <g class="map-point" data-stop="etape-2-mauricie" transform="translate(184.3,532.1)" opacity="1">
+    
+    <circle r="30" fill="#FFF1D6" stroke="#C1392B" stroke-width="4"/>
+    <text x="0" y="1" text-anchor="middle" dominant-baseline="central" font-size="28">🍁</text>
+    <circle cx="21.6" cy="-21.6" r="13" fill="#C1392B" stroke="#FFF8EC" stroke-width="2"/>
+    <text x="21.6" y="-20.6" text-anchor="middle" dominant-baseline="central"
+          font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="13" font-weight="800" fill="#fff">2</text>
+    <text x="0" y="52" text-anchor="middle" font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="16" font-weight="800" fill="#2B2118">Mauricie</text>
+  </g>
+
+  <g class="map-point" data-stop="etape-3-lac-saint-jean" transform="translate(244.0,120.0)" opacity="1">
+    
+    <circle r="30" fill="#FFF1D6" stroke="#4C3B8C" stroke-width="4"/>
+    <text x="0" y="1" text-anchor="middle" dominant-baseline="central" font-size="28">🫐</text>
+    <circle cx="21.6" cy="-21.6" r="13" fill="#4C3B8C" stroke="#FFF8EC" stroke-width="2"/>
+    <text x="21.6" y="-20.6" text-anchor="middle" dominant-baseline="central"
+          font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="13" font-weight="800" fill="#fff">3</text>
+    <text x="0" y="52" text-anchor="middle" font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="16" font-weight="800" fill="#2B2118">Lac-Saint-Jean</text>
+  </g>
+
+  <g class="map-point" data-stop="etape-4-fjord-saguenay" transform="translate(480.6961725913692,178.53160410854616)" opacity="1">
+    
+    <circle r="30" fill="#FFF1D6" stroke="#1B4F72" stroke-width="4"/>
+    <text x="0" y="1" text-anchor="middle" dominant-baseline="central" font-size="28">🏔️</text>
+    <circle cx="21.6" cy="-21.6" r="13" fill="#1B4F72" stroke="#FFF8EC" stroke-width="2"/>
+    <text x="21.6" y="-20.6" text-anchor="middle" dominant-baseline="central"
+          font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="13" font-weight="800" fill="#fff">4</text>
+    <text x="0" y="52" text-anchor="middle" font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="16" font-weight="800" fill="#2B2118">Anse-Saint-Jean</text>
+  </g>
+
+  <g class="map-point" data-stop="etape-5-tadoussac" transform="translate(594.4038274086308,210.06839589145386)" opacity="1">
+    
+    <circle r="30" fill="#FFF1D6" stroke="#0B5563" stroke-width="4"/>
+    <text x="0" y="1" text-anchor="middle" dominant-baseline="central" font-size="28">🐋</text>
+    <circle cx="21.6" cy="-21.6" r="13" fill="#0B5563" stroke="#FFF8EC" stroke-width="2"/>
+    <text x="21.6" y="-20.6" text-anchor="middle" dominant-baseline="central"
+          font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="13" font-weight="800" fill="#fff">5</text>
+    <text x="0" y="52" text-anchor="middle" font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="16" font-weight="800" fill="#2B2118">Tadoussac</text>
+  </g>
+
+  <g class="map-point" data-stop="etape-6-quebec" transform="translate(376.5,505.0)" opacity="1">
+    
+    <circle r="30" fill="#FFF1D6" stroke="#7D3C98" stroke-width="4"/>
+    <text x="0" y="1" text-anchor="middle" dominant-baseline="central" font-size="28">🏰</text>
+    <circle cx="21.6" cy="-21.6" r="13" fill="#7D3C98" stroke="#FFF8EC" stroke-width="2"/>
+    <text x="21.6" y="-20.6" text-anchor="middle" dominant-baseline="central"
+          font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="13" font-weight="800" fill="#fff">6</text>
+    <text x="0" y="52" text-anchor="middle" font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="16" font-weight="800" fill="#2B2118">Québec</text>
+  </g>
+
+  
+  <g opacity="0.85">
+    <polygon points="544.0,822.0 556.5,851.5 586.0,864.0 556.5,876.5 544.0,906.0 531.5,876.5 502.0,864.0 531.5,851.5" fill="#FFF1D6" stroke="#5A4A3A" stroke-width="1.5"/>
+    <circle cx="544" cy="864" r="5" fill="#9C7A4A"/>
+    <text x="544.0" y="806.0" font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="13" font-weight="800" fill="#5A4A3A" text-anchor="middle" dominant-baseline="middle">N</text><text x="602.0" y="864.0" font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="13" font-weight="800" fill="#5A4A3A" text-anchor="middle" dominant-baseline="middle">E</text><text x="544.0" y="922.0" font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="13" font-weight="800" fill="#5A4A3A" text-anchor="middle" dominant-baseline="middle">S</text><text x="486.0" y="864.0" font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="13" font-weight="800" fill="#5A4A3A" text-anchor="middle" dominant-baseline="middle">O</text>
+  </g>
+  <text x="60" y="920" font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="12" fill="#5A4A3A">13 → 28 août 2026</text>
+</svg>

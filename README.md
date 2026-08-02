@@ -9,11 +9,12 @@ Le contenu (histoire, culture, activités...) vit dans `src/data/*.json` et alim
 ## Arborescence
 
 ```
-src/           la PWA — source de vérité (HTML/CSS/JS, manifest, service worker, icônes, data/)
-src/data/      6 fichiers JSON, un par étape (source unique de contenu)
-docs/          copie générée de src/, servie par GitHub Pages — NE JAMAIS ÉDITER À LA MAIN
-pdf/           script Python qui génère le PDF à partir des mêmes JSON
-scripts/       scripts de build (régénération de docs/)
+src/                la PWA — source de vérité (HTML/CSS/JS, manifest, service worker, icônes, data/)
+src/data/           6 fichiers JSON, un par étape (source unique de contenu, avec position lat/lon)
+src/assets/maps/    cartes SVG statiques générées (carte globale + 6 mini-cartes "Tu es ici !")
+docs/               copie générée de src/, servie par GitHub Pages — NE JAMAIS ÉDITER À LA MAIN
+pdf/                script Python qui génère le PDF à partir des mêmes JSON
+scripts/            scripts de build (régénération de docs/ et des cartes SVG)
 ```
 
 `docs/` est entièrement régénéré depuis `src/` par `npm run build` (voir plus bas). Toute modification
@@ -66,6 +67,22 @@ ensuite pour répercuter le changement sur `docs/`.
 
 Types d'activités supportés (`activites[].type`) : `chercheEtTrouve`, `bingo`, `vraiFaux`, `quiz`,
 `enigme`, `motsMeles`, `dessine`.
+
+## Cartes du trajet
+
+Écran d'accueil : une carte globale façon carte au trésor (`src/assets/maps/carte-globale.svg`), avec
+les 6 étapes cliquables reliées par un itinéraire en pointillés numéroté. Chaque page d'étape affiche en
+plus une mini-carte "Tu es ici !" recadrée sur sa région, avec un pin animé sur l'étape courante et les
+étapes précédente/suivante en plus petit pour le contexte.
+
+Tout est du SVG statique (aucune carte interactive en ligne, donc 100% fiable hors connexion) généré à
+partir de `src/data/*.json` (champ `position: {lat, lon}` de chaque étape) :
+```bash
+python3 scripts/generate_maps.py
+```
+Régénère les 7 fichiers dans `src/assets/maps/`. Comme pour le contenu, ne pas oublier `npm run build`
+ensuite pour répercuter le changement sur `docs/`, et penser à ajouter tout nouveau fichier de carte à
+`CORE_ASSETS` dans `src/service-worker.js` pour qu'il reste disponible hors connexion.
 
 ## Icônes de l'app
 

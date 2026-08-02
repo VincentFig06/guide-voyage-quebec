@@ -5,6 +5,7 @@
   "accroche": "Ici, ce sont les baleines qui donnent rendez-vous !",
   "dates": { "debut": "2026-08-23", "fin": "2026-08-25", "duree": "3 jours" },
   "badge": { "emoji": "🐋", "nom": "Queue de baleine", "couleur": "#0B5563" },
+  "position": { "lat": 48.15, "lon": -69.72 },
   "carnet": {
     "ouOnEst": "Tadoussac est un petit village posé à l'endroit exact où le fjord du Saguenay rencontre le grand fleuve Saint-Laurent. Cette rencontre d'eaux attire... des baleines !",
     "aQuoiCaRessemble": "Des dunes de sable géantes, un petit port de pêcheurs, et au loin, si tu regardes bien la surface de l'eau, peut-être un souffle ou une nageoire."

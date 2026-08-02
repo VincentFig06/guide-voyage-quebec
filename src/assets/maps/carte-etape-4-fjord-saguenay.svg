@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="29.6 0.0 610.4 350.1" role="img"
+     aria-label="Tu es ici : Anse-Saint-Jean">
+  <style>
+    .map-point-current .pulse-ring {
+      animation: mapPulse 2.2s ease-out infinite;
+      transform-origin: 0 0;
+    }
+    @keyframes mapPulse {
+      0%   { transform: scale(1);    opacity: 0.55; }
+      70%  { transform: scale(1.55); opacity: 0; }
+      100% { transform: scale(1.55); opacity: 0; }
+    }
+  </style>
+  
+  <defs>
+    <linearGradient id="paperGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFF8EC"/>
+      <stop offset="1" stop-color="#FFF1D6"/>
+    </linearGradient>
+  </defs>
+  <rect x="-10" y="-40" width="690" height="430" fill="url(#paperGrad)"/>
+
+  <path d="M 70.0 800.0 Q 264.6 695.4 376.5 505.0 Q 444.2 327.0 594.4 210.1" fill="none" stroke="#BFE0EA" stroke-width="16" stroke-linecap="round" opacity="0.75"/>
+  <path d="M 244.0 120.0 Q 351.8 191.9 480.7 178.5 Q 543.2 173.8 594.4 210.1" fill="none" stroke="#BFE0EA" stroke-width="13" stroke-linecap="round" opacity="0.75"/>
+
+  <path d="M 70.0 800.0 L 184.3 532.1 L 244.0 120.0 L 480.7 178.5 L 594.4 210.1 L 376.5 505.0" fill="none" stroke="#9C7A4A" stroke-width="3.5" stroke-dasharray="2 10" stroke-linecap="round" opacity="0.9"/>
+  <polygon points="9,0 -6,-6 -6,6" fill="#9C7A4A" transform="translate(362.3,149.3) rotate(13.9)" opacity="0.85"/><polygon points="9,0 -6,-6 -6,6" fill="#9C7A4A" transform="translate(537.5,194.3) rotate(15.5)" opacity="0.85"/>
+
+  
+  <g class="map-point" data-stop="etape-3-lac-saint-jean" transform="translate(244.0,120.0)" opacity="0.62">
+    
+    <circle r="20" fill="#FFF1D6" stroke="#4C3B8C" stroke-width="4"/>
+    <text x="0" y="1" text-anchor="middle" dominant-baseline="central" font-size="19">🫐</text>
+    <circle cx="14.4" cy="-14.4" r="10" fill="#4C3B8C" stroke="#FFF8EC" stroke-width="2"/>
+    <text x="14.4" y="-13.4" text-anchor="middle" dominant-baseline="central"
+          font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="10" font-weight="800" fill="#fff">3</text>
+    <text x="0" y="38" text-anchor="middle" font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="12" font-weight="800" fill="#2B2118">Lac-Saint-Jean</text>
+  </g>
+  <g class="map-point map-point-current" data-stop="etape-4-fjord-saguenay" transform="translate(480.6961725913692,178.53160410854616)" opacity="1">
+    
+      <circle class="pulse-ring" cx="0" cy="0" r="30" fill="none" stroke="#1B4F72" stroke-width="4"/>
+    <circle r="30" fill="#FFF1D6" stroke="#1B4F72" stroke-width="4"/>
+    <text x="0" y="1" text-anchor="middle" dominant-baseline="central" font-size="28">🏔️</text>
+    <circle cx="21.6" cy="-21.6" r="13" fill="#1B4F72" stroke="#FFF8EC" stroke-width="2"/>
+    <text x="21.6" y="-20.6" text-anchor="middle" dominant-baseline="central"
+          font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="13" font-weight="800" fill="#fff">4</text>
+    <text x="0" y="52" text-anchor="middle" font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="16" font-weight="800" fill="#2B2118">Anse-Saint-Jean</text>
+  </g>
+  <g class="map-point" data-stop="etape-5-tadoussac" transform="translate(594.4038274086308,210.06839589145386)" opacity="0.62">
+    
+    <circle r="20" fill="#FFF1D6" stroke="#0B5563" stroke-width="4"/>
+    <text x="0" y="1" text-anchor="middle" dominant-baseline="central" font-size="19">🐋</text>
+    <circle cx="14.4" cy="-14.4" r="10" fill="#0B5563" stroke="#FFF8EC" stroke-width="2"/>
+    <text x="14.4" y="-13.4" text-anchor="middle" dominant-baseline="central"
+          font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="10" font-weight="800" fill="#fff">5</text>
+    <text x="0" y="38" text-anchor="middle" font-family="ui-rounded, 'SF Pro Rounded', 'Segoe UI Rounded', system-ui, sans-serif" font-size="12" font-weight="800" fill="#2B2118">Tadoussac</text>
+  </g>
+</svg>
