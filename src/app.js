@@ -52,7 +52,7 @@
   // ---------- Data loading ----------
   async function loadAllData() {
     const results = await Promise.all(
-      STOP_FILES.map((f) => fetch(`../data/${f}`).then((r) => r.json()))
+      STOP_FILES.map((f) => fetch(`data/${f}`).then((r) => r.json()))
     );
     return results.sort((a, b) => a.ordre - b.ordre);
   }

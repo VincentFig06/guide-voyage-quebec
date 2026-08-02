@@ -1,0 +1,9 @@
+{
+  "name": "guide-voyage-quebec",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Passeport de l'Explorateur du Québec — build docs/ (GitHub Pages) depuis src/.",
+  "scripts": {
+    "build": "bash scripts/build-docs.sh"
+  }
+}

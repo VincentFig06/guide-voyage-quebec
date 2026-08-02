@@ -14,7 +14,7 @@ import subprocess
 import html as htmllib
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA_DIR = os.path.join(ROOT, "data")
+DATA_DIR = os.path.join(ROOT, "src", "data")
 OUT_HTML = os.path.join(ROOT, "pdf", "passeport-explorateur.html")
 OUT_PDF = os.path.join(ROOT, "pdf", "Passeport-Explorateur-du-Quebec.pdf")
 

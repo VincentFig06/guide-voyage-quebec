@@ -1,0 +1,76 @@
+{
+  "id": "etape-4-fjord-saguenay",
+  "ordre": 4,
+  "ville": "Anse-Saint-Jean / Fjord du Saguenay",
+  "accroche": "Un fjord creusé par des géants de glace.",
+  "dates": { "debut": "2026-08-21", "fin": "2026-08-23", "duree": "3 jours" },
+  "badge": { "emoji": "🏔️", "nom": "Fjord", "couleur": "#1B4F72" },
+  "carnet": {
+    "ouOnEst": "La rivière Saguenay se glisse entre deux hautes falaises de roche avant de rejoindre le fleuve Saint-Laurent. Anse-Saint-Jean est un petit village niché au creux de ce paysage spectaculaire.",
+    "aQuoiCaRessemble": "De l'eau très profonde encadrée de montagnes abruptes couvertes de sapins. Un vrai décor de carte postale !"
+  },
+  "histoire": [
+    {
+      "titre": "Creusé par un glacier géant",
+      "texte": "Il y a environ 20 000 ans, un immense glacier (une épaisse couche de glace) recouvrait toute la région. En avançant très lentement, il a creusé une profonde vallée en forme de U. Quand la glace a fondu, l'eau de mer est entrée dans cette vallée : voilà comment est né le fjord !"
+    },
+    {
+      "titre": "Le pont sur un billet de banque",
+      "texte": "Le pont couvert (en bois, avec un toit) d'Anse-Saint-Jean est tellement célèbre qu'il a été dessiné sur un ancien billet canadien de 1000 dollars ! Aujourd'hui ce billet ne circule plus, mais le pont, lui, est toujours là."
+    },
+    {
+      "titre": "Un village de marins et de pêcheurs",
+      "texte": "Pendant longtemps, les habitants d'Anse-Saint-Jean ont vécu de la pêche et de la navigation sur le fjord. Aujourd'hui, ce sont surtout les kayaks et les bateaux de croisière qui glissent sur l'eau."
+    }
+  ],
+  "culture": {
+    "titre": "Vivre entre montagne et eau salée",
+    "texte": "Fait étonnant : l'eau du fjord est salée en surface (eau de mer) mais douce en profondeur (eau de rivière) ! Les deux se superposent sans vraiment se mélanger."
+  },
+  "specialite": {
+    "nom": "Produits du terroir saguenéen",
+    "texte": "La région du Saguenay est réputée pour son poisson fumé et ses petits producteurs locaux : fromages, charcuteries, confitures... De quoi remplir un pique-nique face au fjord.",
+    "aGouter": ["Poisson fumé", "Fromage local", "Pain fraîchement sorti du four d'un petit producteur"]
+  },
+  "pointsInteret": [
+    { "nom": "Croisière ou kayak sur le fjord", "texte": "Glisse sur l'eau au pied des falaises, avec un peu de chance tu croiseras des phoques.", "emoji": "🛶" },
+    { "nom": "Randonnée belvédère", "texte": "Une petite montée bien méritée pour admirer le fjord vu d'en haut.", "emoji": "🥾" },
+    { "nom": "Le pont couvert rouge", "texte": "Le fameux pont photographié sur l'ancien billet de 1000$ : viens le prendre en photo toi aussi !", "emoji": "🌉" }
+  ],
+  "motQuebecois": {
+    "mot": "c'est plate",
+    "signification": "c'est ennuyeux / c'est dommage",
+    "exemple": "\"Il pleut aujourd'hui, c'est plate, on ne pourra pas faire de kayak.\"",
+    "clinDoeil": "Rien à voir avec une assiette ! Au Québec, \"plate\" veut dire \"décevant\" ou \"ennuyeux\"."
+  },
+  "activites": [
+    {
+      "type": "vraiFaux",
+      "titre": "Vrai fjord ou faux fjord ?",
+      "consigne": "Un fjord, ce n'est pas juste une belle vallée avec de l'eau. Vrai ou faux ?",
+      "donnees": {
+        "questions": [
+          { "affirmation": "Un fjord est creusé par un glacier.", "reponse": true, "explication": "Vrai ! C'est le passage lent et puissant de la glace qui façonne cette forme en U." },
+          { "affirmation": "L'eau d'un fjord est toujours 100% salée.", "reponse": false, "explication": "Faux, dans le Saguenay l'eau de mer (salée) recouvre une couche d'eau douce venue de la rivière." },
+          { "affirmation": "Il existe des fjords partout dans le monde, même en France.", "reponse": true, "explication": "Vrai, il y en a par exemple en Normandie (petits) et surtout en Norvège, championne du monde des fjords !" },
+          { "affirmation": "Le fjord du Saguenay s'est formé la semaine dernière.", "reponse": false, "explication": "Faux (et heureusement) ! Il s'est formé il y a environ 20 000 ans." }
+        ]
+      }
+    },
+    {
+      "type": "chercheEtTrouve",
+      "titre": "Chasse au pont couvert",
+      "consigne": "Coche chaque élément une fois trouvé ou observé pendant la visite.",
+      "donnees": {
+        "items": [
+          "Le pont couvert rouge en bois",
+          "Une falaise du fjord vue d'en bas",
+          "Une falaise du fjord vue d'en haut (depuis un belvédère)",
+          "Un bateau ou un kayak sur l'eau",
+          "Un sapin (il y en a des milliers autour du fjord !)"
+        ]
+      }
+    }
+  ],
+  "filRouge": "Les Français connaissent les fjords de Norvège. Mais un vrai fjord se cache aussi ici, en Amérique du Nord : le plus méridional (le plus au sud) de la planète !"
+}

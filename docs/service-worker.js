@@ -13,12 +13,12 @@ const CORE_ASSETS = [
   "./icons/icon-192-maskable.png",
   "./icons/icon-512-maskable.png",
   "./icons/apple-touch-icon.png",
-  "../data/etape-1-montreal.json",
-  "../data/etape-2-mauricie.json",
-  "../data/etape-3-lac-saint-jean.json",
-  "../data/etape-4-fjord-saguenay.json",
-  "../data/etape-5-tadoussac.json",
-  "../data/etape-6-quebec.json"
+  "./data/etape-1-montreal.json",
+  "./data/etape-2-mauricie.json",
+  "./data/etape-3-lac-saint-jean.json",
+  "./data/etape-4-fjord-saguenay.json",
+  "./data/etape-5-tadoussac.json",
+  "./data/etape-6-quebec.json"
 ];
 
 self.addEventListener("install", (event) => {
