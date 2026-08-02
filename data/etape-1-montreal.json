@@ -1,0 +1,83 @@
+{
+  "id": "etape-1-montreal",
+  "ordre": 1,
+  "ville": "Montréal",
+  "accroche": "La ville aux cent clochers... et aux gratte-ciels !",
+  "dates": { "debut": "2026-08-13", "fin": "2026-08-16", "duree": "4 jours" },
+  "badge": { "emoji": "🏙️", "nom": "Gratte-ciel", "couleur": "#2E86AB" },
+  "carnet": {
+    "ouOnEst": "Montréal est une île posée sur le fleuve Saint-Laurent, au sud du Québec. C'est la plus grande ville de la province !",
+    "aQuoiCaRessemble": "Des gratte-ciels en verre à côté de maisons en pierre grise avec des escaliers en colimaçon dehors. Sous tes pieds, tout un monde souterrain : la ville intérieure !"
+  },
+  "histoire": [
+    {
+      "titre": "Une ville fondée par des Français",
+      "texte": "En 1642, un groupe de colons français débarque sur l'île et fonde Ville-Marie, un petit village de bois. Aujourd'hui, ce village est devenu Montréal, une ville de plus de 2 millions d'habitants ! Pas mal pour un début."
+    },
+    {
+      "titre": "Deux langues, une ville",
+      "texte": "À Montréal, tu entendras du français ET de l'anglais, parfois dans la même phrase ! Beaucoup de Montréalais passent d'une langue à l'autre sans même y penser. Essaie de compter combien de fois ça t'arrive."
+    },
+    {
+      "titre": "Une ville sous la ville",
+      "texte": "Il fait très froid l'hiver à Montréal (parfois -20°C !). Alors les habitants ont construit RÉSO, un immense réseau de couloirs souterrains avec des magasins, reliant le métro à des dizaines de bâtiments. Tu peux traverser une partie du centre-ville sans jamais sortir dehors !"
+    }
+  ],
+  "culture": {
+    "titre": "Le Plateau et ses murs peints",
+    "texte": "Dans le quartier du Plateau-Mont-Royal, les murs racontent des histoires en couleurs : c'est le street art ! Des artistes peignent d'immenses fresques sur les bâtiments. Garde l'œil ouvert, tu vas en croiser plein en te promenant."
+  },
+  "specialite": {
+    "nom": "Bagel, poutine et smoked meat",
+    "texte": "Trois spécialités, trois façons différentes de se régaler : le bagel montréalais (cuit au feu de bois, plus petit et plus sucré que le new-yorkais), la poutine (frites + fromage en grains + sauce brune, un vrai plat doudou) et le smoked meat (du bœuf fumé pendant des jours, servi bien épais dans un sandwich).",
+    "aGouter": ["Un bagel au sésame tout chaud", "Une poutine classique", "Un sandwich smoked meat"]
+  },
+  "pointsInteret": [
+    { "nom": "Biodôme & Insectarium", "texte": "Quatre écosystèmes différents sous un même toit (forêt tropicale, Arctique...) et des milliers d'insectes à observer de tout près.", "emoji": "🦎" },
+    { "nom": "Vieux-Port", "texte": "Balade au bord de l'eau, tour de grande roue et sensations fortes en jet boat sur le fleuve.", "emoji": "⚓" },
+    { "nom": "Basilique Notre-Dame", "texte": "Un spectacle son et lumière raconte l'histoire de la ville à l'intérieur d'une église toute bleue et dorée.", "emoji": "⛪" },
+    { "nom": "Mont-Royal", "texte": "La colline qui a donné son nom à la ville. Monte jusqu'au belvédère pour voir tous les gratte-ciels d'en haut.", "emoji": "🌳" }
+  ],
+  "motQuebecois": {
+    "mot": "char",
+    "signification": "voiture",
+    "exemple": "\"On prend le char pour aller au dépanneur !\" veut dire \"On prend la voiture pour aller à l'épicerie du coin.\"",
+    "clinDoeil": "En France, un char c'est un véhicule de guerre... ou celui d'un défilé ! Au Québec, c'est juste la voiture de tous les jours."
+  },
+  "activites": [
+    {
+      "type": "chercheEtTrouve",
+      "titre": "Chasse aux drapeaux",
+      "consigne": "En te promenant dans Montréal, coche chaque drapeau que tu repères !",
+      "donnees": {
+        "items": [
+          "Le drapeau du Québec (bleu avec des fleurs de lys blanches)",
+          "Le drapeau du Canada (rouge avec la feuille d'érable)",
+          "Le drapeau de Montréal (avec une croix et 4 fleurs différentes)",
+          "Un drapeau français, si tu as de la chance !"
+        ]
+      }
+    },
+    {
+      "type": "motsMeles",
+      "titre": "Mots mêlés montréalais",
+      "consigne": "Retrouve les 6 mots cachés dans la grille (ils peuvent être écrits dans tous les sens, même à l'envers !).",
+      "donnees": {
+        "grille": [
+          "OBAXBXIQYF",
+          "QADUAJPUQT",
+          "GGOESLLYFR",
+          "YERPIQAATK",
+          "PLTOLETADL",
+          "ZJEUIVEHBH",
+          "SCMTQUACXP",
+          "CYRIUEUYEE",
+          "VPRNELFIQT",
+          "NGREYFXWGW"
+        ],
+        "mots": ["BASILIQUE", "POUTINE", "PLATEAU", "FLEUVE", "BAGEL", "METRO"]
+      }
+    }
+  ],
+  "filRouge": "En France, la ville la plus peuplée est Paris. Ici, c'est Montréal ! Deux grandes villes, deux histoires... mais un même mot pour dire \"bonjour\"."
+}

@@ -1,0 +1,64 @@
+{
+  "id": "etape-3-lac-saint-jean",
+  "ordre": 3,
+  "ville": "Roberval / Lac-Saint-Jean",
+  "accroche": "Un lac si grand qu'on dirait la mer !",
+  "dates": { "debut": "2026-08-18", "fin": "2026-08-21", "duree": "4 jours" },
+  "badge": { "emoji": "🫐", "nom": "Bleuet", "couleur": "#4C3B8C" },
+  "carnet": {
+    "ouOnEst": "Le Lac-Saint-Jean est un immense lac rond, si grand que tu ne verras pas l'autre rive ! Roberval est l'une des villes posées sur ses bords.",
+    "aQuoiCaRessemble": "De longues plages de sable, une eau parfois turquoise, et des champs de petits fruits bleus à perte de vue tout autour du lac."
+  },
+  "histoire": [
+    {
+      "titre": "Le territoire des Pekuakamiulnuatsh",
+      "texte": "Bien avant l'arrivée des Européens, les Pekuakamiulnuatsh (un peuple innu) vivaient déjà autour du lac, qu'ils appelaient Pekuakami : \"le lac plat\". Aujourd'hui encore, la communauté de Mashteuiatsh, sur la rive du lac, garde vivantes ses traditions."
+    },
+    {
+      "titre": "Le tour du lac à la nage",
+      "texte": "Chaque été, des nageurs venus du monde entier tentent de traverser le Lac-Saint-Jean à la nage lors d'une grande course : la Traversée internationale du lac Saint-Jean. Plus de 30 km à parcourir dans l'eau, parfois fraîche même en été !"
+    },
+    {
+      "titre": "Un village englouti... presque",
+      "texte": "Le Lac-Saint-Jean n'était pas toujours aussi grand : au début du 20e siècle, on a construit un barrage pour produire de l'électricité, et le niveau du lac a monté, engloutissant des terres. Un vrai petit mystère quand on regarde l'eau aujourd'hui !"
+    }
+  ],
+  "culture": {
+    "titre": "Être \"Jeannois\"",
+    "texte": "Les habitants du Lac-Saint-Jean sont fiers d'être \"Jeannois\" (ou \"Jeannoises\") : ils ont leur propre accent, leurs propres expressions, et un esprit très chaleureux, un peu comme une grande famille autour du lac."
+  },
+  "specialite": {
+    "nom": "Bleuets et tourtière du Lac",
+    "texte": "Le Lac-Saint-Jean, c'est LA capitale mondiale du bleuet (une sorte de myrtille géante et sucrée) ! Attention, la tourtière du Lac-Saint-Jean n'a rien à voir avec celle de Montréal : ici, c'est un grand plat mijoté pendant des heures avec plusieurs viandes et des pommes de terre en cubes, pas une petite tourte.",
+    "aGouter": ["Tarte aux bleuets", "Tourtière du Lac-Saint-Jean (mijotée, pas une tourte !)", "Confiture de bleuets"]
+  },
+  "pointsInteret": [
+    { "nom": "Baignade au lac", "texte": "De belles plages de sable pour barboter, l'eau se réchauffe bien en été.", "emoji": "🏖️" },
+    { "nom": "Village historique de Val-Jalbert", "texte": "Un authentique village fantôme abandonné, avec ses maisons intactes et une cascade impressionnante juste à côté.", "emoji": "🏚️" },
+    { "nom": "Cueillette de bleuets", "texte": "Si la saison le permet, remplis un petit panier de bleuets directement sur les plants !", "emoji": "🧺" }
+  ],
+  "motQuebecois": {
+    "mot": "dépanneur",
+    "signification": "petite épicerie de quartier ouverte tard",
+    "exemple": "\"Je vais au dépanneur chercher du lait.\"",
+    "clinDoeil": "En France, un dépanneur répare ta voiture en panne ! Au Québec, c'est le petit magasin du coin où on trouve un peu de tout."
+  },
+  "activites": [
+    {
+      "type": "dessine",
+      "titre": "Dessine ta tarte aux bleuets",
+      "consigne": "Après avoir goûté (ou juste imaginé !) la fameuse tarte aux bleuets, dessine-la ici, avec autant de bleuets que tu veux.",
+      "donnees": { "canvas": true }
+    },
+    {
+      "type": "enigme",
+      "titre": "Le mystère du village fantôme",
+      "consigne": "Val-Jalbert était un village plein de vie, avec une usine, une école, une église... Puis un jour, presque tous les habitants sont partis d'un coup, laissant leurs maisons vides. À ton avis, pourquoi ?",
+      "donnees": {
+        "indice": "Ça a un rapport avec l'usine qui faisait travailler tout le village...",
+        "reponse": "L'usine de pâte à papier du village a fermé ses portes en 1927. Sans travail, presque toutes les familles ont dû partir chercher un emploi ailleurs, laissant leurs maisons telles quelles. C'est pour ça qu'on peut encore s'y promener aujourd'hui, comme si le temps s'était arrêté !"
+      }
+    }
+  ],
+  "filRouge": "En France, on a des myrtilles dans les Vosges ou les Alpes. Ici, le cousin québécois s'appelle le bleuet : plus gros, plus sucré, et roi de toute une région !"
+}

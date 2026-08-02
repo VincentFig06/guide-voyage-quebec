@@ -1,0 +1,90 @@
+{
+  "id": "etape-5-tadoussac",
+  "ordre": 5,
+  "ville": "Tadoussac",
+  "accroche": "Ici, ce sont les baleines qui donnent rendez-vous !",
+  "dates": { "debut": "2026-08-23", "fin": "2026-08-25", "duree": "3 jours" },
+  "badge": { "emoji": "🐋", "nom": "Queue de baleine", "couleur": "#0B5563" },
+  "carnet": {
+    "ouOnEst": "Tadoussac est un petit village posé à l'endroit exact où le fjord du Saguenay rencontre le grand fleuve Saint-Laurent. Cette rencontre d'eaux attire... des baleines !",
+    "aQuoiCaRessemble": "Des dunes de sable géantes, un petit port de pêcheurs, et au loin, si tu regardes bien la surface de l'eau, peut-être un souffle ou une nageoire."
+  },
+  "histoire": [
+    {
+      "titre": "Le tout premier comptoir de fourrures",
+      "texte": "En 1600, bien avant la fondation de Québec ou de Montréal, des marchands français installent à Tadoussac le tout premier poste de traite de fourrures d'Amérique du Nord. C'est ici que Français et peuples autochtones ont commencé à échanger fourrures, outils et savoirs."
+    },
+    {
+      "titre": "Une rencontre entre deux mondes",
+      "texte": "Les Innus (un peuple autochtone) vivaient sur ces terres depuis des milliers d'années avant l'arrivée des Européens. Leur connaissance du territoire, de la chasse et de la navigation a été précieuse pour les premiers colons français."
+    },
+    {
+      "titre": "Pourquoi tant de baleines ici ?",
+      "texte": "À Tadoussac, l'eau salée du fleuve et l'eau douce et froide du Saguenay se rencontrent et se mélangent. Ce mélange remonte plein de petites créatures (du plancton, des crevettes) depuis les profondeurs, ce qui attire des poissons... et donc des baleines affamées !"
+    }
+  ],
+  "culture": {
+    "titre": "La capitale des baleines",
+    "texte": "Tadoussac est l'un des meilleurs endroits au monde pour observer des baleines depuis la terre ferme, sans même prendre un bateau ! Bélugas blancs, rorquals, et parfois même des baleines bleues, le plus grand animal de la planète, viennent se nourrir ici chaque été."
+  },
+  "specialite": {
+    "nom": "Fruits de mer et crevettes nordiques",
+    "texte": "Les eaux froides du Saint-Laurent produisent des crevettes nordiques minuscules mais très sucrées, ainsi que du poisson frais pêché le matin même.",
+    "aGouter": ["Crevettes nordiques", "Poisson frais du jour", "Chaudrée (soupe de fruits de mer)"]
+  },
+  "pointsInteret": [
+    { "nom": "Excursion aux baleines", "texte": "En bateau ou en zodiac, pars à la recherche des géants du fleuve. Le grand moment fort du voyage !", "emoji": "🐳" },
+    { "nom": "Les dunes de sable", "texte": "D'immenses dunes à dévaler en courant, avec vue sur le fleuve.", "emoji": "🏜️" },
+    { "nom": "Maison des Dunes", "texte": "Un centre d'interprétation pour comprendre comment ces dunes géantes se sont formées.", "emoji": "🏛️" }
+  ],
+  "motQuebecois": {
+    "mot": "fin de semaine",
+    "signification": "week-end",
+    "exemple": "\"On va observer les baleines toute la fin de semaine !\"",
+    "clinDoeil": "Au Québec, on évite le mot anglais \"week-end\" et on dit \"fin de semaine\". Logique, non ?"
+  },
+  "activites": [
+    {
+      "type": "chercheEtTrouve",
+      "titre": "Carnet d'observation des baleines",
+      "consigne": "Coche chaque espèce que tu réussis à repérer pendant l'excursion (ou dans les affiches du centre d'observation).",
+      "donnees": {
+        "items": [
+          "Le béluga (tout blanc, petit et rond)",
+          "Le petit rorqual (le plus commun ici)",
+          "Le rorqual à bosse (avec ses longues nageoires)",
+          "Le rorqual bleu (le plus grand animal du monde !)",
+          "Un phoque, pour le bonus"
+        ]
+      }
+    },
+    {
+      "type": "quiz",
+      "titre": "Quiz baleines",
+      "consigne": "Coche la bonne réponse pour chaque question.",
+      "donnees": {
+        "questions": [
+          {
+            "question": "Quel est le plus grand animal du monde ?",
+            "choix": ["Le rorqual bleu", "L'éléphant d'Afrique", "Le requin blanc"],
+            "reponse": 0,
+            "explication": "Le rorqual bleu (ou baleine bleue) peut mesurer jusqu'à 30 mètres, soit 3 bus scolaires mis bout à bout !"
+          },
+          {
+            "question": "Comment respire une baleine ?",
+            "choix": ["Avec des branchies, comme un poisson", "Avec des poumons, elle remonte à la surface", "Elle ne respire pas"],
+            "reponse": 1,
+            "explication": "Une baleine est un mammifère, comme toi ! Elle doit remonter respirer de l'air à la surface régulièrement."
+          },
+          {
+            "question": "Le béluga se reconnaît facilement parce qu'il est...",
+            "choix": ["Tout noir", "Tout blanc", "Rayé comme un zèbre"],
+            "reponse": 1,
+            "explication": "Le béluga est blanc, sans nageoire dorsale, et on l'appelle parfois le \"canari des mers\" à cause des sons qu'il émet."
+          }
+        ]
+      }
+    }
+  ],
+  "filRouge": "En France, on peut observer des dauphins au large de certaines côtes. Ici, à Tadoussac, ce sont carrément des baleines de plusieurs dizaines de tonnes qui viennent te dire bonjour !"
+}

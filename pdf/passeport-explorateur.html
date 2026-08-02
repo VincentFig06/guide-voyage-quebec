@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Passeport de l'Explorateur du Québec</title>
+<style>
+@page { size: A4; margin: 12mm; }
+* { box-sizing: border-box; }
+body { font-family: "Helvetica Neue", Arial, sans-serif; color: #2B2118; margin: 0; }
+.pdf-page {
+  page-break-after: always;
+  padding: 4mm 2mm;
+}
+.pdf-page:last-child { page-break-after: auto; }
+h1 { font-size: 26pt; margin: 0 0 8pt; }
+h2 { font-size: 18pt; margin: 0; }
+h3 { font-size: 12.5pt; margin: 10pt 0 3pt; color: #E4572E; }
+h4 { font-size: 10.5pt; margin: 8pt 0 2pt; }
+p { font-size: 9pt; line-height: 1.32; margin: 2pt 0 5pt; }
+
+.pdf-cover { text-align: center; padding-top: 40mm; }
+.cover-flags { font-size: 28pt; margin-bottom: 6pt; }
+.cover-sub { font-size: 11pt; color: #5A4A3A; margin-bottom: 24pt; }
+.cover-field { font-size: 11pt; margin-top: 18pt; }
+.cover-field .line { display: inline-block; width: 100%; border-bottom: 1px solid #999; margin-top: 10pt; height: 14pt; }
+
+.pdf-page-header { display: flex; align-items: center; gap: 10pt; border-bottom: 3px solid var(--c, #F4A93B); padding-bottom: 8pt; }
+.pdf-badge { font-size: 26pt; width: 46pt; height: 46pt; border-radius: 50%; border: 2px solid var(--c, #F4A93B); display: flex; align-items: center; justify-content: center; flex: none; }
+.pdf-order { font-size: 8pt; text-transform: uppercase; color: #5A4A3A; letter-spacing: .05em; }
+.pdf-dates { font-size: 9pt; color: #5A4A3A; }
+.pdf-page-header > div:nth-child(2) { flex: 1; }
+.pdf-stamp-box { text-align: center; }
+.pdf-stamp-circle { width: 40pt; height: 40pt; border: 2px dashed #999; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16pt; opacity: .35; }
+.pdf-stamp-label { font-size: 7pt; color: #999; }
+.pdf-accroche { font-style: italic; color: #5A4A3A; margin-top: 6pt; }
+
+.pdf-two-col { display: flex; gap: 8pt; margin: 8pt 0; }
+.pdf-box { flex: 1; background: #FFF1D6; border-radius: 8pt; padding: 6pt 8pt; }
+.pdf-box b { display: block; font-size: 7.5pt; text-transform: uppercase; color: #5A4A3A; margin-bottom: 2pt; }
+
+.anecdote { }
+.a-gouter { font-size: 9pt; font-style: italic; color: #5A4A3A; }
+
+.pdf-poi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6pt; }
+.pdf-poi { background: #FFF1D6; border-radius: 8pt; padding: 6pt 8pt; }
+.pdf-poi p { margin: 2pt 0 0; }
+
+.pdf-mot { background: #F4A93B; color: #2B2118; border-radius: 10pt; padding: 8pt 10pt; margin: 8pt 0; }
+.pdf-mot .mot { font-size: 15pt; font-weight: bold; }
+.pdf-mot .ex { font-size: 8.5pt; margin-top: 3pt; }
+
+.pdf-activity { margin-bottom: 8pt; }
+.pdf-activity .consigne { font-size: 9pt; color: #5A4A3A; }
+.pdf-checklist { list-style: none; margin: 0; padding: 0; columns: 1; }
+.pdf-checklist li { font-size: 9.5pt; margin-bottom: 4pt; }
+.pdf-checklist .box { display: inline-block; width: 9pt; height: 9pt; border: 1.5px solid #2B2118; margin-right: 6pt; vertical-align: middle; }
+.pdf-bingo { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4pt; }
+.pdf-bingo-cell { border: 1px solid #ccc; border-radius: 4pt; padding: 6pt; font-size: 8pt; text-align: center; min-height: 28pt; display: flex; align-items: center; justify-content: center; }
+.pdf-vf { margin-bottom: 6pt; }
+.pdf-vf .affirmation { font-weight: bold; font-size: 9.5pt; margin-bottom: 2pt; }
+.pdf-vf .choice { font-size: 9pt; }
+.pdf-vf .explication { font-size: 8pt; color: #5A4A3A; font-style: italic; }
+.pdf-enigme { background: #FFF1D6; border-radius: 8pt; padding: 8pt; }
+.pdf-enigme .indice { font-size: 9pt; }
+.pdf-enigme .reponse-flip { transform: rotate(180deg); font-size: 9pt; margin-top: 8pt; }
+.pdf-enigme .flip-note { font-size: 7.5pt; color: #999; text-align: center; }
+.pdf-grid { display: inline-block; margin-bottom: 4pt; }
+.pdf-grid-row { display: flex; }
+.pdf-grid-row span { width: 13pt; height: 13pt; display: flex; align-items: center; justify-content: center; font-family: monospace; font-size: 8pt; border: .5px solid #eee; }
+.mots-list { font-size: 8.5pt; color: #5A4A3A; }
+.pdf-drawbox { border: 1.5px dashed #999; border-radius: 8pt; height: 60mm; }
+
+.pdf-filrouge { font-size: 8.5pt; font-style: italic; background: #FFF1D6; border-left: 4px solid #2E86AB; padding: 6pt 8pt; border-radius: 6pt; margin: 8pt 0; }
+.pdf-photo-box { margin-top: 8pt; }
+.pdf-photo-placeholder { border: 1.5px dashed #999; border-radius: 8pt; height: 45mm; display: flex; align-items: center; justify-content: center; color: #999; font-size: 9pt; }
+
+.pdf-recap { text-align: center; padding-top: 20mm; }
+.recap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14pt; margin: 16pt 0; }
+.recap-badge .circle { width: 60pt; height: 60pt; margin: 0 auto 4pt; border-radius: 50%; border: 3px dashed var(--c, #999); display: flex; align-items: center; justify-content: center; font-size: 22pt; opacity: .5; }
+.recap-badge .name { font-size: 9pt; }
+.confirm { color: #E4572E; }
+</style>
+</head>
+<body>
+
+    <section class="pdf-page pdf-cover">
+      <div class="cover-flags">🇫🇷 ⇄ 🇨🇦</div>
+      <h1>Passeport de<br>l'Explorateur<br>du Québec</h1>
+      <p class="cover-sub">Un carnet de voyage à tamponner, étape après étape,<br>de Montréal jusqu'à Québec.</p>
+      <div class="cover-field">Ce passeport appartient à :<br><span class="line"></span></div>
+      <div class="cover-field">Voyage du 13 au 28 août 2026</div>
+    </section>
+    
+    <section class="pdf-page">
+      <div class="pdf-page-header" style="--c:#2E86AB">
+        <div class="pdf-badge">🏙️</div>
+        <div>
+          <div class="pdf-order">Étape 1</div>
+          <h2>Montréal</h2>
+          <div class="pdf-dates">13 août → 16 août · 4 jours</div>
+        </div>
+        <div class="pdf-stamp-box">
+          <div class="pdf-stamp-circle">🏙️</div>
+          <div class="pdf-stamp-label">Tampon</div>
+        </div>
+      </div>
+      <p class="pdf-accroche">La ville aux cent clochers... et aux gratte-ciels !</p>
+
+      <div class="pdf-two-col">
+        <div class="pdf-box"><b>Où on est</b><p>Montréal est une île posée sur le fleuve Saint-Laurent, au sud du Québec. C&#x27;est la plus grande ville de la province !</p></div>
+        <div class="pdf-box"><b>À quoi ça ressemble</b><p>Des gratte-ciels en verre à côté de maisons en pierre grise avec des escaliers en colimaçon dehors. Sous tes pieds, tout un monde souterrain : la ville intérieure !</p></div>
+      </div>
+
+      <h3>📖 Histoire &amp; culture</h3>
+      <p class="anecdote"><b>Une ville fondée par des Français.</b> En 1642, un groupe de colons français débarque sur l&#x27;île et fonde Ville-Marie, un petit village de bois. Aujourd&#x27;hui, ce village est devenu Montréal, une ville de plus de 2 millions d&#x27;habitants ! Pas mal pour un début.</p><p class="anecdote"><b>Deux langues, une ville.</b> À Montréal, tu entendras du français ET de l&#x27;anglais, parfois dans la même phrase ! Beaucoup de Montréalais passent d&#x27;une langue à l&#x27;autre sans même y penser. Essaie de compter combien de fois ça t&#x27;arrive.</p><p class="anecdote"><b>Une ville sous la ville.</b> Il fait très froid l&#x27;hiver à Montréal (parfois -20°C !). Alors les habitants ont construit RÉSO, un immense réseau de couloirs souterrains avec des magasins, reliant le métro à des dizaines de bâtiments. Tu peux traverser une partie du centre-ville sans jamais sortir dehors !</p>
+      <p class="anecdote"><b>Le Plateau et ses murs peints.</b> Dans le quartier du Plateau-Mont-Royal, les murs racontent des histoires en couleurs : c&#x27;est le street art ! Des artistes peignent d&#x27;immenses fresques sur les bâtiments. Garde l&#x27;œil ouvert, tu vas en croiser plein en te promenant.</p>
+
+      <h3>🍴 Spécialité : Bagel, poutine et smoked meat</h3>
+      <p>Trois spécialités, trois façons différentes de se régaler : le bagel montréalais (cuit au feu de bois, plus petit et plus sucré que le new-yorkais), la poutine (frites + fromage en grains + sauce brune, un vrai plat doudou) et le smoked meat (du bœuf fumé pendant des jours, servi bien épais dans un sandwich).</p>
+      <p class="a-gouter">À goûter : Un bagel au sésame tout chaud · Une poutine classique · Un sandwich smoked meat</p>
+    </section>
+    
+    <section class="pdf-page">
+      <h3>📍 À ne pas manquer</h3>
+      <div class="pdf-poi-grid">
+        <div class="pdf-poi"><b>🦎 Biodôme &amp; Insectarium</b><p>Quatre écosystèmes différents sous un même toit (forêt tropicale, Arctique...) et des milliers d&#x27;insectes à observer de tout près.</p></div><div class="pdf-poi"><b>⚓ Vieux-Port</b><p>Balade au bord de l&#x27;eau, tour de grande roue et sensations fortes en jet boat sur le fleuve.</p></div><div class="pdf-poi"><b>⛪ Basilique Notre-Dame</b><p>Un spectacle son et lumière raconte l&#x27;histoire de la ville à l&#x27;intérieur d&#x27;une église toute bleue et dorée.</p></div><div class="pdf-poi"><b>🌳 Mont-Royal</b><p>La colline qui a donné son nom à la ville. Monte jusqu&#x27;au belvédère pour voir tous les gratte-ciels d&#x27;en haut.</p></div>
+      </div>
+
+      <div class="pdf-mot">
+        <div class="mot">char</div>
+        <div>voiture</div>
+        <div class="ex">💬 &quot;On prend le char pour aller au dépanneur !&quot; veut dire &quot;On prend la voiture pour aller à l&#x27;épicerie du coin.&quot;</div>
+        <div class="ex">🇫🇷 En France, un char c&#x27;est un véhicule de guerre... ou celui d&#x27;un défilé ! Au Québec, c&#x27;est juste la voiture de tous les jours.</div>
+      </div>
+
+      <h3>🎮 À toi de jouer !</h3>
+      <div class="pdf-activity"><h4>🎮 Chasse aux drapeaux</h4><p class="consigne">En te promenant dans Montréal, coche chaque drapeau que tu repères !</p><ul class="pdf-checklist"><li><span class="box"></span>Le drapeau du Québec (bleu avec des fleurs de lys blanches)</li><li><span class="box"></span>Le drapeau du Canada (rouge avec la feuille d&#x27;érable)</li><li><span class="box"></span>Le drapeau de Montréal (avec une croix et 4 fleurs différentes)</li><li><span class="box"></span>Un drapeau français, si tu as de la chance !</li></ul></div><div class="pdf-activity"><h4>🎮 Mots mêlés montréalais</h4><p class="consigne">Retrouve les 6 mots cachés dans la grille (ils peuvent être écrits dans tous les sens, même à l&#x27;envers !).</p><div class="pdf-grid"><div class="pdf-grid-row"><span>O</span><span>B</span><span>A</span><span>X</span><span>B</span><span>X</span><span>I</span><span>Q</span><span>Y</span><span>F</span></div><div class="pdf-grid-row"><span>Q</span><span>A</span><span>D</span><span>U</span><span>A</span><span>J</span><span>P</span><span>U</span><span>Q</span><span>T</span></div><div class="pdf-grid-row"><span>G</span><span>G</span><span>O</span><span>E</span><span>S</span><span>L</span><span>L</span><span>Y</span><span>F</span><span>R</span></div><div class="pdf-grid-row"><span>Y</span><span>E</span><span>R</span><span>P</span><span>I</span><span>Q</span><span>A</span><span>A</span><span>T</span><span>K</span></div><div class="pdf-grid-row"><span>P</span><span>L</span><span>T</span><span>O</span><span>L</span><span>E</span><span>T</span><span>A</span><span>D</span><span>L</span></div><div class="pdf-grid-row"><span>Z</span><span>J</span><span>E</span><span>U</span><span>I</span><span>V</span><span>E</span><span>H</span><span>B</span><span>H</span></div><div class="pdf-grid-row"><span>S</span><span>C</span><span>M</span><span>T</span><span>Q</span><span>U</span><span>A</span><span>C</span><span>X</span><span>P</span></div><div class="pdf-grid-row"><span>C</span><span>Y</span><span>R</span><span>I</span><span>U</span><span>E</span><span>U</span><span>Y</span><span>E</span><span>E</span></div><div class="pdf-grid-row"><span>V</span><span>P</span><span>R</span><span>N</span><span>E</span><span>L</span><span>F</span><span>I</span><span>Q</span><span>T</span></div><div class="pdf-grid-row"><span>N</span><span>G</span><span>R</span><span>E</span><span>Y</span><span>F</span><span>X</span><span>W</span><span>G</span><span>W</span></div></div><p class="mots-list">BASILIQUE · POUTINE · PLATEAU · FLEUVE · BAGEL · METRO</p></div>
+
+      <div class="pdf-filrouge">🇫🇷⇄🇨🇦 En France, la ville la plus peuplée est Paris. Ici, c&#x27;est Montréal ! Deux grandes villes, deux histoires... mais un même mot pour dire &quot;bonjour&quot;.</div>
+
+      <div class="pdf-photo-box">
+        <div class="pdf-photo-placeholder">Colle ta photo souvenir ici 📸</div>
+      </div>
+    </section>
+    
+    <section class="pdf-page">
+      <div class="pdf-page-header" style="--c:#C1392B">
+        <div class="pdf-badge">🍁</div>
+        <div>
+          <div class="pdf-order">Étape 2</div>
+          <h2>Parc de la Mauricie / Grandes-Piles</h2>
+          <div class="pdf-dates">16 août → 18 août · 3 jours</div>
+        </div>
+        <div class="pdf-stamp-box">
+          <div class="pdf-stamp-circle">🍁</div>
+          <div class="pdf-stamp-label">Tampon</div>
+        </div>
+      </div>
+      <p class="pdf-accroche">Ici, la forêt régnait déjà bien avant les humains.</p>
+
+      <div class="pdf-two-col">
+        <div class="pdf-box"><b>Où on est</b><p>En route vers le nord, entre Montréal et le Lac-Saint-Jean, tu entres dans la grande forêt québécoise. Ici, ce sont les arbres qui commandent !</p></div>
+        <div class="pdf-box"><b>À quoi ça ressemble</b><p>Des lacs à perte de vue, des sentiers dans les bois et, si tu es patient, peut-être un castor qui construit son barrage au coucher du soleil.</p></div>
+      </div>
+
+      <h3>📖 Histoire &amp; culture</h3>
+      <p class="anecdote"><b>Le temps de la drave.</b> Il y a un siècle, des milliers de troncs d&#x27;arbres coupés étaient jetés dans les rivières pour être transportés jusqu&#x27;aux scieries. Ce transport s&#x27;appelait la drave, et les hommes qui marchaient sur les troncs flottants pour les guider s&#x27;appelaient des draveurs. Un métier aussi dangereux qu&#x27;impressionnant !</p><p class="anecdote"><b>La vie dans les camps forestiers.</b> Les bûcherons vivaient des mois entiers loin de chez eux, dans des camps en bois perdus dans la forêt. Ils coupaient les arbres à la hache et à la scie, dormaient serrés les uns contre les autres pour avoir chaud, et racontaient des légendes le soir autour du poêle.</p><p class="anecdote"><b>Grandes-Piles, village de bûcherons.</b> Le village de Grandes-Piles doit son nom aux billes de bois (les &quot;pilotis&quot;) empilées le long de la rivière avant leur grand voyage vers les scieries. Aujourd&#x27;hui, le Village du Bûcheron raconte cette histoire.</p>
+      <p class="anecdote"><b>L&#x27;érable, l&#x27;arbre roi.</b> Le Québec produit plus de 70% du sirop d&#x27;érable de toute la planète ! Chaque printemps, on plante un petit robinet dans le tronc des érables pour récolter leur sève sucrée, puis on la fait bouillir longtemps pour obtenir du sirop doré.</p>
+
+      <h3>🍴 Spécialité : Sirop d&#x27;érable et cabane à sucre</h3>
+      <p>D&#x27;habitude, on va &quot;à la cabane à sucre&quot; au printemps, quand la sève coule. Mais on peut goûter au sirop d&#x27;érable toute l&#x27;année : sur des crêpes, sur de la glace... ou transformé en petits bonbons durs appelés &quot;tire d&#x27;érable&quot; !</p>
+      <p class="a-gouter">À goûter : Sirop d&#x27;érable sur des crêpes ou de la glace · Bonbons de tire d&#x27;érable · Beurre d&#x27;érable à tartiner</p>
+    </section>
+    
+    <section class="pdf-page">
+      <h3>📍 À ne pas manquer</h3>
+      <div class="pdf-poi-grid">
+        <div class="pdf-poi"><b>🥾 Randonnées faciles</b><p>Des sentiers courts autour des lacs, parfaits pour les jambes d&#x27;explorateurs.</p></div><div class="pdf-poi"><b>🛶 Canot sur le lac</b><p>Pagaie sur une eau calme, entourée de forêt de tous les côtés.</p></div><div class="pdf-poi"><b>🦫 Guet aux orignaux et aux castors</b><p>Au lever ou au coucher du soleil, reste bien silencieux : c&#x27;est le meilleur moment pour les apercevoir.</p></div><div class="pdf-poi"><b>🪓 Village du Bûcheron</b><p>Des cabanes en bois reconstituées pour comprendre la vie des draveurs d&#x27;autrefois.</p></div>
+      </div>
+
+      <div class="pdf-mot">
+        <div class="mot">magasiner</div>
+        <div>faire du shopping</div>
+        <div class="ex">💬 &quot;On va magasiner des souvenirs avant de repartir !&quot;</div>
+        <div class="ex">🇫🇷 En France on dit &quot;faire les magasins&quot; ou &quot;faire du shopping&quot;. Au Québec, un seul mot suffit : magasiner !</div>
+      </div>
+
+      <h3>🎮 À toi de jouer !</h3>
+      <div class="pdf-activity"><h4>🎮 Bingo nature</h4><p class="consigne">Coche chaque case quand tu repères la chose correspondante dans la forêt. Tu fais une ligne complète ? Bingo !</p><div class="pdf-bingo"><div class="pdf-bingo-cell">Une feuille d&#x27;érable</div><div class="pdf-bingo-cell">Un barrage de castor</div><div class="pdf-bingo-cell">Un pin</div><div class="pdf-bingo-cell">Une libellule</div><div class="pdf-bingo-cell">Un lac</div><div class="pdf-bingo-cell">Une trace d&#x27;animal</div><div class="pdf-bingo-cell">Un rocher moussu</div><div class="pdf-bingo-cell">Un pic-bois (au son !)</div><div class="pdf-bingo-cell">Un canot</div></div></div><div class="pdf-activity"><h4>🎮 Vrai ou faux : l&#x27;érable</h4><p class="consigne">Lis chaque phrase et devine si c&#x27;est vrai ou faux.</p><div class="pdf-vf"><p class="affirmation">On récolte la sève de l&#x27;érable en été. <span class="choice">☐ Vrai &nbsp; ☐ Faux</span></p><p class="explication">→ Faux ! On la récolte au printemps, quand elle remonte dans le tronc.</p></div><div class="pdf-vf"><p class="affirmation">Il faut environ 40 litres de sève pour faire 1 litre de sirop. <span class="choice">☐ Vrai &nbsp; ☐ Faux</span></p><p class="explication">→ Vrai ! On fait bouillir la sève très longtemps pour qu&#x27;elle devienne un sirop épais et sucré.</p></div><div class="pdf-vf"><p class="affirmation">La feuille d&#x27;érable est sur le drapeau du Canada. <span class="choice">☐ Vrai &nbsp; ☐ Faux</span></p><p class="explication">→ Vrai, elle est rouge, au centre du drapeau canadien !</p></div><div class="pdf-vf"><p class="affirmation">Les castors coupent les arbres avec leurs pattes. <span class="choice">☐ Vrai &nbsp; ☐ Faux</span></p><p class="explication">→ Faux, ils rongent le bois avec leurs grandes dents qui poussent toute leur vie !</p></div></div>
+
+      <div class="pdf-filrouge">🇫🇷⇄🇨🇦 En France, on connaît le sucre de betterave et le sucre de canne. Ici, le sucre vient... d&#x27;un arbre ! Une drôle de découverte pour un petit Français.</div>
+
+      <div class="pdf-photo-box">
+        <div class="pdf-photo-placeholder">Colle ta photo souvenir ici 📸</div>
+      </div>
+    </section>
+    
+    <section class="pdf-page">
+      <div class="pdf-page-header" style="--c:#4C3B8C">
+        <div class="pdf-badge">🫐</div>
+        <div>
+          <div class="pdf-order">Étape 3</div>
+          <h2>Roberval / Lac-Saint-Jean</h2>
+          <div class="pdf-dates">18 août → 21 août · 4 jours</div>
+        </div>
+        <div class="pdf-stamp-box">
+          <div class="pdf-stamp-circle">🫐</div>
+          <div class="pdf-stamp-label">Tampon</div>
+        </div>
+      </div>
+      <p class="pdf-accroche">Un lac si grand qu&#x27;on dirait la mer !</p>
+
+      <div class="pdf-two-col">
+        <div class="pdf-box"><b>Où on est</b><p>Le Lac-Saint-Jean est un immense lac rond, si grand que tu ne verras pas l&#x27;autre rive ! Roberval est l&#x27;une des villes posées sur ses bords.</p></div>
+        <div class="pdf-box"><b>À quoi ça ressemble</b><p>De longues plages de sable, une eau parfois turquoise, et des champs de petits fruits bleus à perte de vue tout autour du lac.</p></div>
+      </div>
+
+      <h3>📖 Histoire &amp; culture</h3>
+      <p class="anecdote"><b>Le territoire des Pekuakamiulnuatsh.</b> Bien avant l&#x27;arrivée des Européens, les Pekuakamiulnuatsh (un peuple innu) vivaient déjà autour du lac, qu&#x27;ils appelaient Pekuakami : &quot;le lac plat&quot;. Aujourd&#x27;hui encore, la communauté de Mashteuiatsh, sur la rive du lac, garde vivantes ses traditions.</p><p class="anecdote"><b>Le tour du lac à la nage.</b> Chaque été, des nageurs venus du monde entier tentent de traverser le Lac-Saint-Jean à la nage lors d&#x27;une grande course : la Traversée internationale du lac Saint-Jean. Plus de 30 km à parcourir dans l&#x27;eau, parfois fraîche même en été !</p><p class="anecdote"><b>Un village englouti... presque.</b> Le Lac-Saint-Jean n&#x27;était pas toujours aussi grand : au début du 20e siècle, on a construit un barrage pour produire de l&#x27;électricité, et le niveau du lac a monté, engloutissant des terres. Un vrai petit mystère quand on regarde l&#x27;eau aujourd&#x27;hui !</p>
+      <p class="anecdote"><b>Être &quot;Jeannois&quot;.</b> Les habitants du Lac-Saint-Jean sont fiers d&#x27;être &quot;Jeannois&quot; (ou &quot;Jeannoises&quot;) : ils ont leur propre accent, leurs propres expressions, et un esprit très chaleureux, un peu comme une grande famille autour du lac.</p>
+
+      <h3>🍴 Spécialité : Bleuets et tourtière du Lac</h3>
+      <p>Le Lac-Saint-Jean, c&#x27;est LA capitale mondiale du bleuet (une sorte de myrtille géante et sucrée) ! Attention, la tourtière du Lac-Saint-Jean n&#x27;a rien à voir avec celle de Montréal : ici, c&#x27;est un grand plat mijoté pendant des heures avec plusieurs viandes et des pommes de terre en cubes, pas une petite tourte.</p>
+      <p class="a-gouter">À goûter : Tarte aux bleuets · Tourtière du Lac-Saint-Jean (mijotée, pas une tourte !) · Confiture de bleuets</p>
+    </section>
+    
+    <section class="pdf-page">
+      <h3>📍 À ne pas manquer</h3>
+      <div class="pdf-poi-grid">
+        <div class="pdf-poi"><b>🏖️ Baignade au lac</b><p>De belles plages de sable pour barboter, l&#x27;eau se réchauffe bien en été.</p></div><div class="pdf-poi"><b>🏚️ Village historique de Val-Jalbert</b><p>Un authentique village fantôme abandonné, avec ses maisons intactes et une cascade impressionnante juste à côté.</p></div><div class="pdf-poi"><b>🧺 Cueillette de bleuets</b><p>Si la saison le permet, remplis un petit panier de bleuets directement sur les plants !</p></div>
+      </div>
+
+      <div class="pdf-mot">
+        <div class="mot">dépanneur</div>
+        <div>petite épicerie de quartier ouverte tard</div>
+        <div class="ex">💬 &quot;Je vais au dépanneur chercher du lait.&quot;</div>
+        <div class="ex">🇫🇷 En France, un dépanneur répare ta voiture en panne ! Au Québec, c&#x27;est le petit magasin du coin où on trouve un peu de tout.</div>
+      </div>
+
+      <h3>🎮 À toi de jouer !</h3>
+      <div class="pdf-activity"><h4>🎮 Dessine ta tarte aux bleuets</h4><p class="consigne">Après avoir goûté (ou juste imaginé !) la fameuse tarte aux bleuets, dessine-la ici, avec autant de bleuets que tu veux.</p><div class="pdf-drawbox"></div></div><div class="pdf-activity"><h4>🎮 Le mystère du village fantôme</h4><p class="consigne">Val-Jalbert était un village plein de vie, avec une usine, une école, une église... Puis un jour, presque tous les habitants sont partis d&#x27;un coup, laissant leurs maisons vides. À ton avis, pourquoi ?</p><div class="pdf-enigme"><p class="indice">💡 Indice : Ça a un rapport avec l&#x27;usine qui faisait travailler tout le village...</p><p class="reponse-flip">L&#x27;usine de pâte à papier du village a fermé ses portes en 1927. Sans travail, presque toutes les familles ont dû partir chercher un emploi ailleurs, laissant leurs maisons telles quelles. C&#x27;est pour ça qu&#x27;on peut encore s&#x27;y promener aujourd&#x27;hui, comme si le temps s&#x27;était arrêté !</p><p class="flip-note">(réponse à l'envers — tourne le passeport !)</p></div></div>
+
+      <div class="pdf-filrouge">🇫🇷⇄🇨🇦 En France, on a des myrtilles dans les Vosges ou les Alpes. Ici, le cousin québécois s&#x27;appelle le bleuet : plus gros, plus sucré, et roi de toute une région !</div>
+
+      <div class="pdf-photo-box">
+        <div class="pdf-photo-placeholder">Colle ta photo souvenir ici 📸</div>
+      </div>
+    </section>
+    
+    <section class="pdf-page">
+      <div class="pdf-page-header" style="--c:#1B4F72">
+        <div class="pdf-badge">🏔️</div>
+        <div>
+          <div class="pdf-order">Étape 4</div>
+          <h2>Anse-Saint-Jean / Fjord du Saguenay</h2>
+          <div class="pdf-dates">21 août → 23 août · 3 jours</div>
+        </div>
+        <div class="pdf-stamp-box">
+          <div class="pdf-stamp-circle">🏔️</div>
+          <div class="pdf-stamp-label">Tampon</div>
+        </div>
+      </div>
+      <p class="pdf-accroche">Un fjord creusé par des géants de glace.</p>
+
+      <div class="pdf-two-col">
+        <div class="pdf-box"><b>Où on est</b><p>La rivière Saguenay se glisse entre deux hautes falaises de roche avant de rejoindre le fleuve Saint-Laurent. Anse-Saint-Jean est un petit village niché au creux de ce paysage spectaculaire.</p></div>
+        <div class="pdf-box"><b>À quoi ça ressemble</b><p>De l&#x27;eau très profonde encadrée de montagnes abruptes couvertes de sapins. Un vrai décor de carte postale !</p></div>
+      </div>
+
+      <h3>📖 Histoire &amp; culture</h3>
+      <p class="anecdote"><b>Creusé par un glacier géant.</b> Il y a environ 20 000 ans, un immense glacier (une épaisse couche de glace) recouvrait toute la région. En avançant très lentement, il a creusé une profonde vallée en forme de U. Quand la glace a fondu, l&#x27;eau de mer est entrée dans cette vallée : voilà comment est né le fjord !</p><p class="anecdote"><b>Le pont sur un billet de banque.</b> Le pont couvert (en bois, avec un toit) d&#x27;Anse-Saint-Jean est tellement célèbre qu&#x27;il a été dessiné sur un ancien billet canadien de 1000 dollars ! Aujourd&#x27;hui ce billet ne circule plus, mais le pont, lui, est toujours là.</p><p class="anecdote"><b>Un village de marins et de pêcheurs.</b> Pendant longtemps, les habitants d&#x27;Anse-Saint-Jean ont vécu de la pêche et de la navigation sur le fjord. Aujourd&#x27;hui, ce sont surtout les kayaks et les bateaux de croisière qui glissent sur l&#x27;eau.</p>
+      <p class="anecdote"><b>Vivre entre montagne et eau salée.</b> Fait étonnant : l&#x27;eau du fjord est salée en surface (eau de mer) mais douce en profondeur (eau de rivière) ! Les deux se superposent sans vraiment se mélanger.</p>
+
+      <h3>🍴 Spécialité : Produits du terroir saguenéen</h3>
+      <p>La région du Saguenay est réputée pour son poisson fumé et ses petits producteurs locaux : fromages, charcuteries, confitures... De quoi remplir un pique-nique face au fjord.</p>
+      <p class="a-gouter">À goûter : Poisson fumé · Fromage local · Pain fraîchement sorti du four d&#x27;un petit producteur</p>
+    </section>
+    
+    <section class="pdf-page">
+      <h3>📍 À ne pas manquer</h3>
+      <div class="pdf-poi-grid">
+        <div class="pdf-poi"><b>🛶 Croisière ou kayak sur le fjord</b><p>Glisse sur l&#x27;eau au pied des falaises, avec un peu de chance tu croiseras des phoques.</p></div><div class="pdf-poi"><b>🥾 Randonnée belvédère</b><p>Une petite montée bien méritée pour admirer le fjord vu d&#x27;en haut.</p></div><div class="pdf-poi"><b>🌉 Le pont couvert rouge</b><p>Le fameux pont photographié sur l&#x27;ancien billet de 1000$ : viens le prendre en photo toi aussi !</p></div>
+      </div>
+
+      <div class="pdf-mot">
+        <div class="mot">c&#x27;est plate</div>
+        <div>c&#x27;est ennuyeux / c&#x27;est dommage</div>
+        <div class="ex">💬 &quot;Il pleut aujourd&#x27;hui, c&#x27;est plate, on ne pourra pas faire de kayak.&quot;</div>
+        <div class="ex">🇫🇷 Rien à voir avec une assiette ! Au Québec, &quot;plate&quot; veut dire &quot;décevant&quot; ou &quot;ennuyeux&quot;.</div>
+      </div>
+
+      <h3>🎮 À toi de jouer !</h3>
+      <div class="pdf-activity"><h4>🎮 Vrai fjord ou faux fjord ?</h4><p class="consigne">Un fjord, ce n&#x27;est pas juste une belle vallée avec de l&#x27;eau. Vrai ou faux ?</p><div class="pdf-vf"><p class="affirmation">Un fjord est creusé par un glacier. <span class="choice">☐ Vrai &nbsp; ☐ Faux</span></p><p class="explication">→ Vrai ! C&#x27;est le passage lent et puissant de la glace qui façonne cette forme en U.</p></div><div class="pdf-vf"><p class="affirmation">L&#x27;eau d&#x27;un fjord est toujours 100% salée. <span class="choice">☐ Vrai &nbsp; ☐ Faux</span></p><p class="explication">→ Faux, dans le Saguenay l&#x27;eau de mer (salée) recouvre une couche d&#x27;eau douce venue de la rivière.</p></div><div class="pdf-vf"><p class="affirmation">Il existe des fjords partout dans le monde, même en France. <span class="choice">☐ Vrai &nbsp; ☐ Faux</span></p><p class="explication">→ Vrai, il y en a par exemple en Normandie (petits) et surtout en Norvège, championne du monde des fjords !</p></div><div class="pdf-vf"><p class="affirmation">Le fjord du Saguenay s&#x27;est formé la semaine dernière. <span class="choice">☐ Vrai &nbsp; ☐ Faux</span></p><p class="explication">→ Faux (et heureusement) ! Il s&#x27;est formé il y a environ 20 000 ans.</p></div></div><div class="pdf-activity"><h4>🎮 Chasse au pont couvert</h4><p class="consigne">Coche chaque élément une fois trouvé ou observé pendant la visite.</p><ul class="pdf-checklist"><li><span class="box"></span>Le pont couvert rouge en bois</li><li><span class="box"></span>Une falaise du fjord vue d&#x27;en bas</li><li><span class="box"></span>Une falaise du fjord vue d&#x27;en haut (depuis un belvédère)</li><li><span class="box"></span>Un bateau ou un kayak sur l&#x27;eau</li><li><span class="box"></span>Un sapin (il y en a des milliers autour du fjord !)</li></ul></div>
+
+      <div class="pdf-filrouge">🇫🇷⇄🇨🇦 Les Français connaissent les fjords de Norvège. Mais un vrai fjord se cache aussi ici, en Amérique du Nord : le plus méridional (le plus au sud) de la planète !</div>
+
+      <div class="pdf-photo-box">
+        <div class="pdf-photo-placeholder">Colle ta photo souvenir ici 📸</div>
+      </div>
+    </section>
+    
+    <section class="pdf-page">
+      <div class="pdf-page-header" style="--c:#0B5563">
+        <div class="pdf-badge">🐋</div>
+        <div>
+          <div class="pdf-order">Étape 5</div>
+          <h2>Tadoussac</h2>
+          <div class="pdf-dates">23 août → 25 août · 3 jours</div>
+        </div>
+        <div class="pdf-stamp-box">
+          <div class="pdf-stamp-circle">🐋</div>
+          <div class="pdf-stamp-label">Tampon</div>
+        </div>
+      </div>
+      <p class="pdf-accroche">Ici, ce sont les baleines qui donnent rendez-vous !</p>
+
+      <div class="pdf-two-col">
+        <div class="pdf-box"><b>Où on est</b><p>Tadoussac est un petit village posé à l&#x27;endroit exact où le fjord du Saguenay rencontre le grand fleuve Saint-Laurent. Cette rencontre d&#x27;eaux attire... des baleines !</p></div>
+        <div class="pdf-box"><b>À quoi ça ressemble</b><p>Des dunes de sable géantes, un petit port de pêcheurs, et au loin, si tu regardes bien la surface de l&#x27;eau, peut-être un souffle ou une nageoire.</p></div>
+      </div>
+
+      <h3>📖 Histoire &amp; culture</h3>
+      <p class="anecdote"><b>Le tout premier comptoir de fourrures.</b> En 1600, bien avant la fondation de Québec ou de Montréal, des marchands français installent à Tadoussac le tout premier poste de traite de fourrures d&#x27;Amérique du Nord. C&#x27;est ici que Français et peuples autochtones ont commencé à échanger fourrures, outils et savoirs.</p><p class="anecdote"><b>Une rencontre entre deux mondes.</b> Les Innus (un peuple autochtone) vivaient sur ces terres depuis des milliers d&#x27;années avant l&#x27;arrivée des Européens. Leur connaissance du territoire, de la chasse et de la navigation a été précieuse pour les premiers colons français.</p><p class="anecdote"><b>Pourquoi tant de baleines ici ?.</b> À Tadoussac, l&#x27;eau salée du fleuve et l&#x27;eau douce et froide du Saguenay se rencontrent et se mélangent. Ce mélange remonte plein de petites créatures (du plancton, des crevettes) depuis les profondeurs, ce qui attire des poissons... et donc des baleines affamées !</p>
+      <p class="anecdote"><b>La capitale des baleines.</b> Tadoussac est l&#x27;un des meilleurs endroits au monde pour observer des baleines depuis la terre ferme, sans même prendre un bateau ! Bélugas blancs, rorquals, et parfois même des baleines bleues, le plus grand animal de la planète, viennent se nourrir ici chaque été.</p>
+
+      <h3>🍴 Spécialité : Fruits de mer et crevettes nordiques</h3>
+      <p>Les eaux froides du Saint-Laurent produisent des crevettes nordiques minuscules mais très sucrées, ainsi que du poisson frais pêché le matin même.</p>
+      <p class="a-gouter">À goûter : Crevettes nordiques · Poisson frais du jour · Chaudrée (soupe de fruits de mer)</p>
+    </section>
+    
+    <section class="pdf-page">
+      <h3>📍 À ne pas manquer</h3>
+      <div class="pdf-poi-grid">
+        <div class="pdf-poi"><b>🐳 Excursion aux baleines</b><p>En bateau ou en zodiac, pars à la recherche des géants du fleuve. Le grand moment fort du voyage !</p></div><div class="pdf-poi"><b>🏜️ Les dunes de sable</b><p>D&#x27;immenses dunes à dévaler en courant, avec vue sur le fleuve.</p></div><div class="pdf-poi"><b>🏛️ Maison des Dunes</b><p>Un centre d&#x27;interprétation pour comprendre comment ces dunes géantes se sont formées.</p></div>
+      </div>
+
+      <div class="pdf-mot">
+        <div class="mot">fin de semaine</div>
+        <div>week-end</div>
+        <div class="ex">💬 &quot;On va observer les baleines toute la fin de semaine !&quot;</div>
+        <div class="ex">🇫🇷 Au Québec, on évite le mot anglais &quot;week-end&quot; et on dit &quot;fin de semaine&quot;. Logique, non ?</div>
+      </div>
+
+      <h3>🎮 À toi de jouer !</h3>
+      <div class="pdf-activity"><h4>🎮 Carnet d&#x27;observation des baleines</h4><p class="consigne">Coche chaque espèce que tu réussis à repérer pendant l&#x27;excursion (ou dans les affiches du centre d&#x27;observation).</p><ul class="pdf-checklist"><li><span class="box"></span>Le béluga (tout blanc, petit et rond)</li><li><span class="box"></span>Le petit rorqual (le plus commun ici)</li><li><span class="box"></span>Le rorqual à bosse (avec ses longues nageoires)</li><li><span class="box"></span>Le rorqual bleu (le plus grand animal du monde !)</li><li><span class="box"></span>Un phoque, pour le bonus</li></ul></div><div class="pdf-activity"><h4>🎮 Quiz baleines</h4><p class="consigne">Coche la bonne réponse pour chaque question.</p><div class="pdf-vf"><p class="affirmation">Quel est le plus grand animal du monde ?</p><p class="choice">☐ Le rorqual bleu &nbsp;&nbsp; ☐ L&#x27;éléphant d&#x27;Afrique &nbsp;&nbsp; ☐ Le requin blanc</p><p class="explication">→ Le rorqual bleu (ou baleine bleue) peut mesurer jusqu&#x27;à 30 mètres, soit 3 bus scolaires mis bout à bout !</p></div><div class="pdf-vf"><p class="affirmation">Comment respire une baleine ?</p><p class="choice">☐ Avec des branchies, comme un poisson &nbsp;&nbsp; ☐ Avec des poumons, elle remonte à la surface &nbsp;&nbsp; ☐ Elle ne respire pas</p><p class="explication">→ Une baleine est un mammifère, comme toi ! Elle doit remonter respirer de l&#x27;air à la surface régulièrement.</p></div><div class="pdf-vf"><p class="affirmation">Le béluga se reconnaît facilement parce qu&#x27;il est...</p><p class="choice">☐ Tout noir &nbsp;&nbsp; ☐ Tout blanc &nbsp;&nbsp; ☐ Rayé comme un zèbre</p><p class="explication">→ Le béluga est blanc, sans nageoire dorsale, et on l&#x27;appelle parfois le &quot;canari des mers&quot; à cause des sons qu&#x27;il émet.</p></div></div>
+
+      <div class="pdf-filrouge">🇫🇷⇄🇨🇦 En France, on peut observer des dauphins au large de certaines côtes. Ici, à Tadoussac, ce sont carrément des baleines de plusieurs dizaines de tonnes qui viennent te dire bonjour !</div>
+
+      <div class="pdf-photo-box">
+        <div class="pdf-photo-placeholder">Colle ta photo souvenir ici 📸</div>
+      </div>
+    </section>
+    
+    <section class="pdf-page">
+      <div class="pdf-page-header" style="--c:#7D3C98">
+        <div class="pdf-badge">🏰</div>
+        <div>
+          <div class="pdf-order">Étape 6</div>
+          <h2>Québec</h2>
+          <div class="pdf-dates">25 août → 28 août · 4 jours</div>
+        </div>
+        <div class="pdf-stamp-box">
+          <div class="pdf-stamp-circle">🏰</div>
+          <div class="pdf-stamp-label">Tampon</div>
+        </div>
+      </div>
+      <p class="pdf-accroche">Le berceau de la Nouvelle-France, où tout a commencé.</p>
+
+      <div class="pdf-two-col">
+        <div class="pdf-box"><b>Où on est</b><p>Québec est la capitale de la province, construite sur un cap rocheux qui surplombe le fleuve Saint-Laurent. C&#x27;est ici que le fleuve devient si étroit qu&#x27;on peut presque voir l&#x27;autre rive.</p></div>
+        <div class="pdf-box"><b>À quoi ça ressemble</b><p>Des remparts de pierre, des rues pavées, des calèches tirées par des chevaux, et un immense château-hôtel qui domine toute la ville : le Château Frontenac.</p></div>
+      </div>
+
+      <h3>📖 Histoire &amp; culture</h3>
+      <p class="anecdote"><b>Champlain plante le premier drapeau.</b> En 1608, l&#x27;explorateur français Samuel de Champlain fonde la ville de Québec. C&#x27;est le tout début de la Nouvelle-France, la colonie française en Amérique du Nord. Toute l&#x27;aventure que tu as suivie depuis Montréal... a commencé ici !</p><p class="anecdote"><b>La seule ville fortifiée au nord du Mexique.</b> Le Vieux-Québec est entouré de remparts (de hauts murs de pierre) presque intacts depuis des siècles. C&#x27;est la seule ville d&#x27;Amérique du Nord, au nord du Mexique, à avoir gardé toutes ses fortifications. Tu peux même marcher dessus !</p><p class="anecdote"><b>Un nom qui vient d&#x27;un mot algonquin.</b> Le mot &quot;Québec&quot; viendrait du mot algonquin &quot;kébec&quot;, qui signifie &quot;là où le fleuve se rétrécit&quot;. Une bien belle façon de décrire l&#x27;endroit exact où la ville a été construite.</p>
+      <p class="anecdote"><b>Le Vieux-Québec, classé à l&#x27;UNESCO.</b> Avec ses maisons en pierre, ses toits pentus et ses petites rues pavées, le Vieux-Québec ressemble à une ville européenne du 18e siècle. Il est tellement bien conservé qu&#x27;il est inscrit au patrimoine mondial de l&#x27;UNESCO, aux côtés de lieux comme le Mont-Saint-Michel !</p>
+
+      <h3>🍴 Spécialité : Poutine, queue de castor et chocolatines</h3>
+      <p>La poutine &quot;originale&quot; se déguste ici avec fierté. Côté sucré, ne repars pas sans avoir goûté une queue de castor : une pâtisserie plate et allongée, frite puis couverte de sucre, cannelle ou chocolat. Et si tu demandes un &quot;pain au chocolat&quot; à Québec, on te comprendra peut-être mieux si tu dis &quot;chocolatine&quot; !</p>
+      <p class="a-gouter">À goûter : Poutine originale · Queue de castor sucre-cannelle · Une chocolatine (pain au chocolat)</p>
+    </section>
+    
+    <section class="pdf-page">
+      <h3>📍 À ne pas manquer</h3>
+      <div class="pdf-poi-grid">
+        <div class="pdf-poi"><b>🏰 Château Frontenac</b><p>Le plus célèbre hôtel du Canada, avec ses tourelles vertes. On dit que c&#x27;est l&#x27;hôtel le plus photographié au monde !</p></div><div class="pdf-poi"><b>🧱 Les remparts</b><p>Marche ou pédale sur les vieux murs de pierre qui entourent la ville, avec vue sur le fleuve.</p></div><div class="pdf-poi"><b>⛲ Place Royale</b><p>La toute première place publique fondée par les Français en Amérique, avec ses maisons de pierre restaurées.</p></div><div class="pdf-poi"><b>💦 Chutes Montmorency</b><p>Des chutes d&#x27;eau plus hautes que celles du Niagara ! Traverse-les en téléphérique ou passe juste au-dessus sur une passerelle suspendue.</p></div>
+      </div>
+
+      <div class="pdf-mot">
+        <div class="mot">chocolatine</div>
+        <div>pain au chocolat (ici on garde le débat ouvert, même en France !)</div>
+        <div class="ex">💬 &quot;Je peux avoir une chocolatine, s&#x27;il vous plaît ?&quot;</div>
+        <div class="ex">🇫🇷 Eh oui, ce grand débat existe aussi en France entre le Sud-Ouest (&quot;chocolatine&quot;) et le reste du pays (&quot;pain au chocolat&quot;) ! Au Québec, c&#x27;est presque toujours &quot;chocolatine&quot;.</div>
+      </div>
+
+      <h3>🎮 À toi de jouer !</h3>
+      <div class="pdf-activity"><h4>🎮 Jeu de piste dans le Vieux-Québec</h4><p class="consigne">Pars à pied dans les rues du Vieux-Québec et coche chaque élément trouvé.</p><ul class="pdf-checklist"><li><span class="box"></span>La statue de Samuel de Champlain</li><li><span class="box"></span>Un canon pointé vers le fleuve</li><li><span class="box"></span>Une calèche tirée par un cheval</li><li><span class="box"></span>Le Château Frontenac vu d&#x27;en bas</li><li><span class="box"></span>Une porte des fortifications (ex. Porte Saint-Louis)</li><li><span class="box"></span>Un artiste de rue sur la Place Royale</li></ul></div><div class="pdf-activity"><h4>🎮 La grande énigme finale</h4><p class="consigne">Depuis Montréal jusqu&#x27;à Québec, tu as suivi les traces des premiers Français en Amérique. À ton avis, pourquoi dit-on que ce voyage &quot;boucle la boucle&quot; à Québec ?</p><div class="pdf-enigme"><p class="indice">💡 Indice : Repense à la toute première étape de ton passeport, à Montréal...</p><p class="reponse-flip">Parce que Québec est la toute première ville fondée en Nouvelle-France (1608), 34 ans avant Montréal (1642) ! Tout ce que tu as visité pendant ton voyage est né, d&#x27;une certaine façon, de cette petite ville-forteresse construite sur un cap. En arrivant à Québec, tu remontes jusqu&#x27;à la source de toute l&#x27;histoire française en Amérique du Nord. Bravo, explorateur : la boucle est bouclée !</p><p class="flip-note">(réponse à l'envers — tourne le passeport !)</p></div></div>
+
+      <div class="pdf-filrouge">🇫🇷⇄🇨🇦 Le drapeau du Québec porte quatre fleurs de lys, comme les anciens rois de France. Ici s&#x27;achève ton passeport : d&#x27;un pays à l&#x27;autre, d&#x27;un drapeau à l&#x27;autre, une même histoire continue de se raconter. Tu es maintenant un vrai Explorateur du Québec !</div>
+
+      <div class="pdf-photo-box">
+        <div class="pdf-photo-placeholder">Colle ta photo souvenir ici 📸</div>
+      </div>
+    </section>
+    
+    <section class="pdf-page pdf-recap">
+      <h1>🏅 Mes badges d'explorateur</h1>
+      <div class="recap-grid"><div class="recap-badge" style="--c:#2E86AB"><div class="circle">🏙️</div><div class="name">Montréal</div></div><div class="recap-badge" style="--c:#C1392B"><div class="circle">🍁</div><div class="name">Parc de la Mauricie / Grandes-Piles</div></div><div class="recap-badge" style="--c:#4C3B8C"><div class="circle">🫐</div><div class="name">Roberval / Lac-Saint-Jean</div></div><div class="recap-badge" style="--c:#1B4F72"><div class="circle">🏔️</div><div class="name">Anse-Saint-Jean / Fjord du Saguenay</div></div><div class="recap-badge" style="--c:#0B5563"><div class="circle">🐋</div><div class="name">Tadoussac</div></div><div class="recap-badge" style="--c:#7D3C98"><div class="circle">🏰</div><div class="name">Québec</div></div></div>
+      <p class="cover-sub">Quand les 6 tampons sont collés, tu es officiellement...</p>
+      <h2 class="confirm">Explorateur du Québec confirmé !</h2>
+      <div class="cover-field">Signature de l'explorateur :<br><span class="line"></span></div>
+    </section>
+    
+</body>
+</html>

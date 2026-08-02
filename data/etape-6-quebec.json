@@ -1,0 +1,74 @@
+{
+  "id": "etape-6-quebec",
+  "ordre": 6,
+  "ville": "Québec",
+  "accroche": "Le berceau de la Nouvelle-France, où tout a commencé.",
+  "dates": { "debut": "2026-08-25", "fin": "2026-08-28", "duree": "4 jours" },
+  "badge": { "emoji": "🏰", "nom": "Château & fleur de lys", "couleur": "#7D3C98" },
+  "carnet": {
+    "ouOnEst": "Québec est la capitale de la province, construite sur un cap rocheux qui surplombe le fleuve Saint-Laurent. C'est ici que le fleuve devient si étroit qu'on peut presque voir l'autre rive.",
+    "aQuoiCaRessemble": "Des remparts de pierre, des rues pavées, des calèches tirées par des chevaux, et un immense château-hôtel qui domine toute la ville : le Château Frontenac."
+  },
+  "histoire": [
+    {
+      "titre": "Champlain plante le premier drapeau",
+      "texte": "En 1608, l'explorateur français Samuel de Champlain fonde la ville de Québec. C'est le tout début de la Nouvelle-France, la colonie française en Amérique du Nord. Toute l'aventure que tu as suivie depuis Montréal... a commencé ici !"
+    },
+    {
+      "titre": "La seule ville fortifiée au nord du Mexique",
+      "texte": "Le Vieux-Québec est entouré de remparts (de hauts murs de pierre) presque intacts depuis des siècles. C'est la seule ville d'Amérique du Nord, au nord du Mexique, à avoir gardé toutes ses fortifications. Tu peux même marcher dessus !"
+    },
+    {
+      "titre": "Un nom qui vient d'un mot algonquin",
+      "texte": "Le mot \"Québec\" viendrait du mot algonquin \"kébec\", qui signifie \"là où le fleuve se rétrécit\". Une bien belle façon de décrire l'endroit exact où la ville a été construite."
+    }
+  ],
+  "culture": {
+    "titre": "Le Vieux-Québec, classé à l'UNESCO",
+    "texte": "Avec ses maisons en pierre, ses toits pentus et ses petites rues pavées, le Vieux-Québec ressemble à une ville européenne du 18e siècle. Il est tellement bien conservé qu'il est inscrit au patrimoine mondial de l'UNESCO, aux côtés de lieux comme le Mont-Saint-Michel !"
+  },
+  "specialite": {
+    "nom": "Poutine, queue de castor et chocolatines",
+    "texte": "La poutine \"originale\" se déguste ici avec fierté. Côté sucré, ne repars pas sans avoir goûté une queue de castor : une pâtisserie plate et allongée, frite puis couverte de sucre, cannelle ou chocolat. Et si tu demandes un \"pain au chocolat\" à Québec, on te comprendra peut-être mieux si tu dis \"chocolatine\" !",
+    "aGouter": ["Poutine originale", "Queue de castor sucre-cannelle", "Une chocolatine (pain au chocolat)"]
+  },
+  "pointsInteret": [
+    { "nom": "Château Frontenac", "texte": "Le plus célèbre hôtel du Canada, avec ses tourelles vertes. On dit que c'est l'hôtel le plus photographié au monde !", "emoji": "🏰" },
+    { "nom": "Les remparts", "texte": "Marche ou pédale sur les vieux murs de pierre qui entourent la ville, avec vue sur le fleuve.", "emoji": "🧱" },
+    { "nom": "Place Royale", "texte": "La toute première place publique fondée par les Français en Amérique, avec ses maisons de pierre restaurées.", "emoji": "⛲" },
+    { "nom": "Chutes Montmorency", "texte": "Des chutes d'eau plus hautes que celles du Niagara ! Traverse-les en téléphérique ou passe juste au-dessus sur une passerelle suspendue.", "emoji": "💦" }
+  ],
+  "motQuebecois": {
+    "mot": "chocolatine",
+    "signification": "pain au chocolat (ici on garde le débat ouvert, même en France !)",
+    "exemple": "\"Je peux avoir une chocolatine, s'il vous plaît ?\"",
+    "clinDoeil": "Eh oui, ce grand débat existe aussi en France entre le Sud-Ouest (\"chocolatine\") et le reste du pays (\"pain au chocolat\") ! Au Québec, c'est presque toujours \"chocolatine\"."
+  },
+  "activites": [
+    {
+      "type": "chercheEtTrouve",
+      "titre": "Jeu de piste dans le Vieux-Québec",
+      "consigne": "Pars à pied dans les rues du Vieux-Québec et coche chaque élément trouvé.",
+      "donnees": {
+        "items": [
+          "La statue de Samuel de Champlain",
+          "Un canon pointé vers le fleuve",
+          "Une calèche tirée par un cheval",
+          "Le Château Frontenac vu d'en bas",
+          "Une porte des fortifications (ex. Porte Saint-Louis)",
+          "Un artiste de rue sur la Place Royale"
+        ]
+      }
+    },
+    {
+      "type": "enigme",
+      "titre": "La grande énigme finale",
+      "consigne": "Depuis Montréal jusqu'à Québec, tu as suivi les traces des premiers Français en Amérique. À ton avis, pourquoi dit-on que ce voyage \"boucle la boucle\" à Québec ?",
+      "donnees": {
+        "indice": "Repense à la toute première étape de ton passeport, à Montréal...",
+        "reponse": "Parce que Québec est la toute première ville fondée en Nouvelle-France (1608), 34 ans avant Montréal (1642) ! Tout ce que tu as visité pendant ton voyage est né, d'une certaine façon, de cette petite ville-forteresse construite sur un cap. En arrivant à Québec, tu remontes jusqu'à la source de toute l'histoire française en Amérique du Nord. Bravo, explorateur : la boucle est bouclée !"
+      }
+    }
+  ],
+  "filRouge": "Le drapeau du Québec porte quatre fleurs de lys, comme les anciens rois de France. Ici s'achève ton passeport : d'un pays à l'autre, d'un drapeau à l'autre, une même histoire continue de se raconter. Tu es maintenant un vrai Explorateur du Québec !"
+}

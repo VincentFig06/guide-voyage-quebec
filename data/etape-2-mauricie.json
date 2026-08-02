@@ -1,0 +1,75 @@
+{
+  "id": "etape-2-mauricie",
+  "ordre": 2,
+  "ville": "Parc de la Mauricie / Grandes-Piles",
+  "accroche": "Ici, la forêt régnait déjà bien avant les humains.",
+  "dates": { "debut": "2026-08-16", "fin": "2026-08-18", "duree": "3 jours" },
+  "badge": { "emoji": "🍁", "nom": "Feuille d'érable", "couleur": "#C1392B" },
+  "carnet": {
+    "ouOnEst": "En route vers le nord, entre Montréal et le Lac-Saint-Jean, tu entres dans la grande forêt québécoise. Ici, ce sont les arbres qui commandent !",
+    "aQuoiCaRessemble": "Des lacs à perte de vue, des sentiers dans les bois et, si tu es patient, peut-être un castor qui construit son barrage au coucher du soleil."
+  },
+  "histoire": [
+    {
+      "titre": "Le temps de la drave",
+      "texte": "Il y a un siècle, des milliers de troncs d'arbres coupés étaient jetés dans les rivières pour être transportés jusqu'aux scieries. Ce transport s'appelait la drave, et les hommes qui marchaient sur les troncs flottants pour les guider s'appelaient des draveurs. Un métier aussi dangereux qu'impressionnant !"
+    },
+    {
+      "titre": "La vie dans les camps forestiers",
+      "texte": "Les bûcherons vivaient des mois entiers loin de chez eux, dans des camps en bois perdus dans la forêt. Ils coupaient les arbres à la hache et à la scie, dormaient serrés les uns contre les autres pour avoir chaud, et racontaient des légendes le soir autour du poêle."
+    },
+    {
+      "titre": "Grandes-Piles, village de bûcherons",
+      "texte": "Le village de Grandes-Piles doit son nom aux billes de bois (les \"pilotis\") empilées le long de la rivière avant leur grand voyage vers les scieries. Aujourd'hui, le Village du Bûcheron raconte cette histoire."
+    }
+  ],
+  "culture": {
+    "titre": "L'érable, l'arbre roi",
+    "texte": "Le Québec produit plus de 70% du sirop d'érable de toute la planète ! Chaque printemps, on plante un petit robinet dans le tronc des érables pour récolter leur sève sucrée, puis on la fait bouillir longtemps pour obtenir du sirop doré."
+  },
+  "specialite": {
+    "nom": "Sirop d'érable et cabane à sucre",
+    "texte": "D'habitude, on va \"à la cabane à sucre\" au printemps, quand la sève coule. Mais on peut goûter au sirop d'érable toute l'année : sur des crêpes, sur de la glace... ou transformé en petits bonbons durs appelés \"tire d'érable\" !",
+    "aGouter": ["Sirop d'érable sur des crêpes ou de la glace", "Bonbons de tire d'érable", "Beurre d'érable à tartiner"]
+  },
+  "pointsInteret": [
+    { "nom": "Randonnées faciles", "texte": "Des sentiers courts autour des lacs, parfaits pour les jambes d'explorateurs.", "emoji": "🥾" },
+    { "nom": "Canot sur le lac", "texte": "Pagaie sur une eau calme, entourée de forêt de tous les côtés.", "emoji": "🛶" },
+    { "nom": "Guet aux orignaux et aux castors", "texte": "Au lever ou au coucher du soleil, reste bien silencieux : c'est le meilleur moment pour les apercevoir.", "emoji": "🦫" },
+    { "nom": "Village du Bûcheron", "texte": "Des cabanes en bois reconstituées pour comprendre la vie des draveurs d'autrefois.", "emoji": "🪓" }
+  ],
+  "motQuebecois": {
+    "mot": "magasiner",
+    "signification": "faire du shopping",
+    "exemple": "\"On va magasiner des souvenirs avant de repartir !\"",
+    "clinDoeil": "En France on dit \"faire les magasins\" ou \"faire du shopping\". Au Québec, un seul mot suffit : magasiner !"
+  },
+  "activites": [
+    {
+      "type": "bingo",
+      "titre": "Bingo nature",
+      "consigne": "Coche chaque case quand tu repères la chose correspondante dans la forêt. Tu fais une ligne complète ? Bingo !",
+      "donnees": {
+        "cases": [
+          "Une feuille d'érable", "Un barrage de castor", "Un pin", "Une libellule",
+          "Un lac", "Une trace d'animal", "Un rocher moussu", "Un pic-bois (au son !)",
+          "Un canot"
+        ]
+      }
+    },
+    {
+      "type": "vraiFaux",
+      "titre": "Vrai ou faux : l'érable",
+      "consigne": "Lis chaque phrase et devine si c'est vrai ou faux.",
+      "donnees": {
+        "questions": [
+          { "affirmation": "On récolte la sève de l'érable en été.", "reponse": false, "explication": "Faux ! On la récolte au printemps, quand elle remonte dans le tronc." },
+          { "affirmation": "Il faut environ 40 litres de sève pour faire 1 litre de sirop.", "reponse": true, "explication": "Vrai ! On fait bouillir la sève très longtemps pour qu'elle devienne un sirop épais et sucré." },
+          { "affirmation": "La feuille d'érable est sur le drapeau du Canada.", "reponse": true, "explication": "Vrai, elle est rouge, au centre du drapeau canadien !" },
+          { "affirmation": "Les castors coupent les arbres avec leurs pattes.", "reponse": false, "explication": "Faux, ils rongent le bois avec leurs grandes dents qui poussent toute leur vie !" }
+        ]
+      }
+    }
+  ],
+  "filRouge": "En France, on connaît le sucre de betterave et le sucre de canne. Ici, le sucre vient... d'un arbre ! Une drôle de découverte pour un petit Français."
+}
